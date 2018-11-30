@@ -1,8 +1,6 @@
 \chapter{Theory of Laser Coupled with Passive Cavity}
 \label{ch:theory}
-Semiconductor lasers with external cavities exhibit a variety of dynamical phenomena, depending on key parameters, comprising feedback strength, feedback delay, pump current, feedback type, and laser nonlinearity\cite{}. Among all of them the, feedback sensitivity of laser diodes is governed essentially by the feedback parameters $C$, $X$ and $\kappa_{ext}$.
-
-In order to correct consider the feedback effect a three-mirror laser model is considered in \autoref{three_mirror_cavity}. 
+Semiconductor lasers with external cavities exhibit a variety of dynamical phenomena, depending on key parameters, comprising feedback strength, feedback delay, pump current, feedback type, and laser nonlinearity\cite{}. Among all of them the, feedback sensitivity of laser diodes is governed essentially by the feedback parameters $C$, $X$ and $\kappa_{ext}$. In order to correct consider the feedback effect a three-mirror laser model is considered in \autoref{three_mirror_cavity}. 
 % The transmission coefficent across the interface, $t_2$, includes any scattering or coupling loss, so $r_2^2+t_2^2\neq1$, in general.
 \begin{figure}[ht]
     \centering
@@ -100,12 +98,29 @@ for strong feedback, which is more interesting and stable for the practical use,
     \label{F_strogn_feedback}
 \end{equation}
 
-According to this we can calculate the linewidth reduction factor $F^2$ versus the external cavity length as shown in \autoref{fig:linewidth_reduction_factor}, which will be used for the device design in \autoref{sec:design}.
+According to this we can calculate the linewidth reduction factor $F^2$ versus the external cavity length as shown in \autoref{fig:F_reduction_factor}, which will be used for the device design in \autoref{sec:design}. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+    \toprule
+    Symbol        & Description                  & Value           \\ \midrule
+    $L_{gain}$    & Active region length         & 300 $\mu m$     \\
+    $L_{grating}$ & Grating region length        & 699.84 $\mu m$  \\
+    $L_{poly}$    & Polymer region length        & 1224.84 $\mu m$ \\
+    $\alpha$      & Linewidth redcution factor   & -3              \\
+    $R_{grating}$ & Grating reflectivity         & 0.3             \\
+    $R_{ext}$     & External cavity reflectivity & 0.187           \\ \bottomrule
+    \end{tabular}
+    \caption{Parameters used in linewidth reduction factor $F^2$ calculation.}
+    \label{tab:F_reduction_factor}
+\end{table}
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=10cm]{figures/reduction_factor.png}
+    \includegraphics[width=.7\linewidth]{figures/F_reduction_factor.png}
     \caption{Linewidth reduction factor}
-    \label{fig:linewidth_reduction_factor}
+    \label{fig:F_reduction_factor}
 \end{figure}
 
 \section{Bandwidth Enhancement}\label{sec:bandwidth_enhancement}
@@ -162,7 +177,7 @@ Another approach used to extend the dynamic properties of an integrated laser is
     \label{fig:PP_resonance_in_modulation_response}
 \end{figure}
 
-Here we will illustrate the operation principle using the same device parameter provided in \cite{montrosset2014laser}, which is shown in [].
+Here we will illustrate the operation principle using the same device parameter provided in \cite{montrosset2014laser}, along with the python code for calculation, is shown in \autoref{sec:PP_resonance_cal}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\linewidth]{figures/PP_resonance_operation_principle.png}
@@ -173,18 +188,26 @@ Here we will illustrate the operation principle using the same device parameter 
 The most favorable operation condition is when the lasing mode $\lambda_0$ operates in the detuned loaidng condition $\lambda_0>\lambda_B$, the closest mode on other side respect to the Bragg wavelength $\lambda_1$ is strongly suppressed, and, finally, a mode on the same side respect to the Bragg wavelength $\lambda_{-1}$ is placed on the the first lobe of the Round Trip Gain (RTG) curve. In this mode configuration, the PPR effect can arise due to the coupling between mode $\lambda_0$ and $\lambda_{-1}$ \cite{montrosset2014laser}. In order to generate an adjacent longitudinal cavity mode under feedback, a strong feedback condition is required, which will form compound cavity modes with the mode spacing of the the normal cavity plus the external cavity.
 % The mode spacing in frequency is defined as:
 \begin{equation}
-    dv=\frac{c}{2(n_{ga}L_a+n_{gp}L_{eff})}
+    \Delta v=\frac{c}{2(n_{gain}L_{gain}+n_{poly}L_{eff})}
     \label{mode_spacing}
 \end{equation}
 
 \chapter{Tunable Laser with Reflection from Chip Facet}\label{ch:normal_laser}
 Characterization of the laser linewidth, RIN, bandwidth, $\alpha$ parameter and phase noise are measured with 1) Cleaved fiber with oil and 2) Lensed fiber, which corresponding to the laser without feedback and with feedback conditions. Principle of each measurement will be introduced and the results will be compared in the following sections.
 
-\section{Linewidth Measurement}\label{sec:linewidth_measurement}
-Laser linewidth is measured by self-homodyning method in the characterization. Self-homodyning can be described mathematically as a single-delay autocorrelation. The optical spectrum at $f_0$ autocorrelates with the delayed version of itself to produce a time-fluctuating spectrum, whose detected voltage has a power spectrum centered at zero frequency. For the case of a laser with Lorentzian lineshape, the half-width of the detected spectrum is equal to the linewidth of the laser.
+The refelction coefficent $r_{eff}$
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.7\linewidth]{figures/self-homodyne.png}
+    \includegraphics[width=\linewidth]{figures/OSA_and_SMSR.png}
+    \caption{}
+    \label{OSA_and_SMSR}
+\end{figure}
+
+\section{Linewidth Measurement}\label{sec:linewidth_measurement}
+Laser linewidth is measured by self-homodyne method in the characterization. Self-homodyning can be described mathematically as a single-delay autocorrelation. The optical spectrum at $f_0$ autocorrelates with the delayed version of itself to produce a time-fluctuating spectrum, whose detected voltage has a power spectrum centered at zero frequency. For the case of a laser with Lorentzian lineshape, the half-width of the detected spectrum is equal to the linewidth of the laser.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/self-homodyne.png}
     \caption{Linewidth of a DBR laser using the self-homodyne technique}
     \label{self-homodyne}
 \end{figure}
@@ -272,7 +295,7 @@ The relaxation oscillation frequency is a measure of the maximum modulation abil
 \subsubsection{Undamped RO}
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=.9\linewidth]{figures/Undamped_RO_grating_4621.png}
+    \includegraphics[width=\linewidth]{figures/Umdamped_RO_and_bandwidth_grating_4621.png}
     \caption{Observation of the undamped relaxation oscillation in OSA.}
     \label{fig:undamped_RO}
 \end{figure}
