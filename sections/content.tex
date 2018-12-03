@@ -193,7 +193,7 @@ The large enhancement of the modulation bandwidth, has been already observed to 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\linewidth]{figures/PP_resonance_operation_principle.png}
-    \caption{Round trip gain (RTG, blue curve) and phase (RTP, red dashed curve) functions computed at the DBR threshold. The red marker represents the lasing mode $\Lambda_0$, the brown marker indicates the PPR mode $\lambda_{-1}$, the blue markers represent other non-lasing cavity modes, adapt from \cite{montrosset2014laser}.}
+    \caption{Round trip gain (RTG, grey curve) and phase (RTP, red curve) functions computed at the DBR threshold. The red marker represents the lasing mode $\Lambda_0$, the brown marker indicates the PPR mode $\lambda_{-1}$, the blue markers represent other non-lasing cavity modes, adapt from \cite{montrosset2014laser}.}
     \label{fig:PP_resonance_operation_principle}
 \end{figure}
 
@@ -365,6 +365,34 @@ The resonance frequencies $f_u$ of Fig.2 corresponds to the $u^{th}$-zeros of xx
 \end{equation}
 
 The equation is the result of two simultaneous interferences between the carrier and the two sidebands. Plotting $f_u^2L$ versus $2u$ gives a straight line whose slope and position yield the dispersion and the chirp parameter by liner regression.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/chirp_cleaved_and_lensed_4679.png}
+    \caption{}
+    \label{fig:chirp_cleaved_and_lensed}
+\end{figure}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[ht]
+    \centering
+    \caption{My caption}
+    \label{tab:chirp_cleaved_and_lensed}
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c|}{$\alpha$} \\ \cline{2-3} 
+                                      & w/o feedback   & w/ feedback  \\ \hline
+    40                                & 3.918          & 2.726        \\
+    50                                & 3.821          & 2.328        \\
+    60                                & 3.462          & 2.596        \\
+    70                                & 3.897          & 2.984        \\
+    80                                & 3.86           & 4.45         \\
+    90                                & 4.078          & 2.997        \\
+    100                               & 3.515          & 2.878        \\ \hline
+    \end{tabular}
+\end{table}
 
 \subsection{AM-FM Index Method}
 The experimental arrangement for measuring the intensity and phase modulation index is shown in Fig. 1. The semiconductor laser is biased above threshold and a small sinusoidally varying current at frequency $\Omega$ is superimposed. The intensity and spectral density of the radiation field are given by
