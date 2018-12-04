@@ -2012,10 +2012,8 @@
     <bcf:citekey order="19">montrosset2014laser</bcf:citekey>
     <bcf:citekey order="20">montrosset2014laser</bcf:citekey>
     <bcf:citekey order="21">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="22">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="23">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="24">agrawal2013semiconductor</bcf:citekey>
-    <bcf:citekey order="25">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="22">agrawal2013semiconductor</bcf:citekey>
+    <bcf:citekey order="23">devaux1993simple</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

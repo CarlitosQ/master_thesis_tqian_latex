@@ -38,10 +38,10 @@ In general, to understand the static lasing behavior under feedback is useful to
 The resonance equation $G$ for the effective laser cavity model is given by
 \begin{equation}
     G=r_1e^{-2i\beta_{gain}L_{gain}}r_{eff}=\abs{G}e^{i\varphi}.
-    \label{eq:RTG}
+    \label{eq:RTG_RTP}
 \end{equation}
 
-Cavity modes are obtianed from \autoref{eq:RTG} for integer values of $\phi/2\pi$; for the lasing mode $m$ at threshold we have
+Cavity modes are obtianed from \autoref{eq:RTG_RTP} for integer values of $\phi/2\pi$; for the lasing mode $m$ at threshold we have
 \begin{equation}
     \abs{G(\lambda_m,g_{m,A})}=G_m=1,\ \varphi_m=2m\pi
     \label{eq:lasing_condition}
@@ -146,7 +146,7 @@ The first mechanism identified to extend the modulation bandwidth of a semicondu
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.65\linewidth]{figures/detuned_loading_principle.png}
+    \includegraphics[width=.6\linewidth]{figures/detuned_loading_principle.png}
     \caption{Detuned loading condition with respect to the grating response. The red and grey dots correspond to the lasing mode detuend to the longer and shorter wavelength sides.}
     \label{fig:detuned_loading_principle}
 \end{figure}
@@ -189,16 +189,33 @@ Another approach used to extend the dynamic properties of an integrated laser is
     \label{fig:PP_resonance_in_modulation_response}
 \end{figure}
 
-The large enhancement of the modulation bandwidth, has been already observed to be closely related to a special behavior of the cavity round–trip phase (RTP) function [10]. Here we illustrate the operation principle using the same device parameter provided in \cite{montrosset2014laser}, along with the python code for calculation, is shown in \autoref{sec:PP_resonance_cal}.
+The large enhancement of the modulation bandwidth, has been already observed to be closely related to a special behavior of the cavity Round Trip Phase (RTP) function [10], which is the phase factor $\varphi$ in \autoref{eq:RTG_RTP}. In order to illustrate the operation principle of the PPR, we take the simplified DBR laser structure as in \cite{montrosset2014laser}, which contains only a gain section and a grating. The parameter used for calculation is provided \autoref{tab:PP_resonance_operation_principle}. The python code used for calculation is provided in \autoref{sec:PP_resonance_cal}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Simplified DBR laser cavity parameters.}
+    \label{tab:PP_resonance_operation_principle}
+    \begin{tabular}{@{}lll@{}}
+    \toprule
+    Symbol    & Description                  & Value        \\ \midrule
+    $L_A$     & Active region length         & 140 $\mu m$  \\
+    $L_G$     & Grating region length        & 780 $\mu m$  \\
+    $\kappa$  & Grating coupling coefficient & 20 $cm^{-1}$ \\
+    $n_{eff}$ & Effective refractive index   & 3.7          \\
+    $R_R$     & Right side reflectivity      & 0            \\
+    $R_L$     & Left side reflectivity       & 0.32         \\ \bottomrule
+    \end{tabular}
+\end{table}
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.6\linewidth]{figures/PP_resonance_operation_principle.png}
-    \caption{Round trip gain (RTG, grey curve) and phase (RTP, red curve) functions computed at the DBR threshold. The red marker represents the lasing mode $\Lambda_0$, the brown marker indicates the PPR mode $\lambda_{-1}$, the blue markers represent other non-lasing cavity modes, adapt from \cite{montrosset2014laser}.}
+    \includegraphics[width=.7\linewidth]{figures/PP_resonance_operation_principle.png}
+    \caption{Round trip gain (RTG, grey curve) and phase (RTP, red curve) functions computed at the DBR threshold. The grey and red marker represent the lasing mode $f_0$ at the corresponding RTG and RTP curve, the blue marker indicates the PPR mode $f_1$.}
     \label{fig:PP_resonance_operation_principle}
 \end{figure}
 
-The most favorable operation condition is when the lasing mode $\lambda_0$ operates in the detuned loaidng condition $\lambda_0>\lambda_B$, the closest mode on other side respect to the Bragg wavelength $\lambda_1$ is strongly suppressed, and, finally, a mode on the same side respect to the Bragg wavelength $\lambda_{-1}$ is placed on the the first lobe of the Round Trip Gain (RTG) curve. In this mode configuration, the PPR effect can arise due to the coupling between mode $\lambda_0$ and $\lambda_{-1}$ \cite{montrosset2014laser}. In order to generate an adjacent longitudinal cavity mode under feedback, a strong feedback condition is required, which will form compound cavity modes with the mode spacing of the the normal cavity plus the external cavity.
-% The mode spacing in frequency is defined as:
+The caculated results are shown in \autoref{fig:PP_resonance_operation_principle}. The most favorable operation condition is when the lasing mode $f_0$ operates in the detuned loaidng condition $f_0<f_B$, a mode on the same side respect to the Bragg wavelength $f_1$ is placed on the the first lobe of the Round Trip Gain (RTG) curve. In this mode configuration, the PPR effect can arise due to the coupling between mode $f_0$ and $f_1$ \cite{montrosset2014laser}, the corresponding PPR frequency is then the difference freqeuncy between the lasing mode $f_0$ and the PPR mode $f_1$. In order to generate an adjacent longitudinal cavity mode under feedback, a strong feedback condition is required, which will form compound cavity modes with the mode spacing of the the normal cavity plus the external cavity.
+
 \begin{equation}
     \Delta v=\frac{c}{2(n_{gain}L_{gain}+n_{poly}L_{eff})}
     \label{mode_spacing}
@@ -329,7 +346,7 @@ For the laser under undamped RO conditions, not all the undamped behavior lead t
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/Umdamped_RO_and_bandwidth_grating_4621.png}
-    \caption{Laser spectra and their correspoinding intensity modulation curve. (a.1) Appearing of the undamped RO peak leads to a higher carrier-photon resonance in (a.2), (b.1) growing of the side peaks leads to increase of the carrier-photon resonance peak in (b.2), (c.1) drastic undamped RO leads to broadened lineshape and decreased modualiton bandwidth in (c.2).}
+    \caption{Laser spectra and their correspoinding intensity modulation curve. (a) Appearing of the undamped RO peak leads to a higher carrier-photon resonance in (b), (c) growing of the side peaks leads to increase of the carrier-photon resonance peak in (d), (e) drastic undamped RO leads to broadened lineshape and decreased modualiton bandwidth in (f).}
     \label{fig:undamped_RO}
 \end{figure}
 
@@ -373,24 +390,24 @@ The equation is the result of two simultaneous interferences between the carrier
     \label{fig:chirp_cleaved_and_lensed}
 \end{figure}
 
-
 % Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 % \usepackage{multirow}
 \begin{table}[ht]
     \centering
     \caption{My caption}
-    \label{tab:chirp_cleaved_and_lensed}
-    \begin{tabular}{|l|l|l|}
-    \hline
-    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c|}{$\alpha$} \\ \cline{2-3} 
-                                      & w/o feedback   & w/ feedback  \\ \hline
-    40                                & 3.918          & 2.726        \\
-    50                                & 3.821          & 2.328        \\
-    60                                & 3.462          & 2.596        \\
-    70                                & 3.897          & 2.984        \\
-    80                                & 3.86           & 4.45         \\
-    90                                & 4.078          & 2.997        \\
-    100                               & 3.515          & 2.878        \\ \hline
+    \label{my-label}
+    \begin{tabular}{@{}lll@{}}
+    \toprule
+    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c}{$\alpha$} \\ \cmidrule(l){2-3} 
+                                      & w/o feedback  & w/ feedback  \\ \midrule
+    40                                & 3.164         & 2.499        \\
+    50                                & 3.017         & 2.247        \\
+    60                                & 2.687         & 2.439        \\
+    70                                & 3.079         & 2.593        \\
+    80                                & 3.003         & 3.095        \\
+    90                                & 2.996         & 2.389        \\
+    100                               & 2.605         & 2.472        \\ \bottomrule
     \end{tabular}
 \end{table}
 
