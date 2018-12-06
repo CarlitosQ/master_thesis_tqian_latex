@@ -1995,25 +1995,41 @@
     <bcf:datasource type="file" datatype="bibtex">thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">tkach1986regimes</bcf:citekey>
+    <bcf:citekey order="1">soriano2013complex</bcf:citekey>
+    <bcf:citekey order="2">kuznetsov1988theory</bcf:citekey>
+    <bcf:citekey order="3">lenstra1985coherence</bcf:citekey>
     <bcf:citekey order="4">tkach1986regimes</bcf:citekey>
-    <bcf:citekey order="5">coldren2012diode</bcf:citekey>
-    <bcf:citekey order="6">kazarinov1987relation</bcf:citekey>
+    <bcf:citekey order="5">yariv1977periodic</bcf:citekey>
+    <bcf:citekey order="6">vallone2011enhanced</bcf:citekey>
+    <bcf:citekey order="7">coldren2012diode</bcf:citekey>
     <bcf:citekey order="8">kazarinov1987relation</bcf:citekey>
+    <bcf:citekey order="9">tkach1986regimes</bcf:citekey>
     <bcf:citekey order="10">coldren2012diode</bcf:citekey>
-    <bcf:citekey order="11">vahala1984detuned</bcf:citekey>
+    <bcf:citekey order="10">petermann2012laser</bcf:citekey>
+    <bcf:citekey order="11">coldren2012diode</bcf:citekey>
     <bcf:citekey order="12">vahala1984detuned</bcf:citekey>
-    <bcf:citekey order="13">kjebon2002experimental</bcf:citekey>
-    <bcf:citekey order="14">ohtsubo2012semiconductor</bcf:citekey>
-    <bcf:citekey order="15">bandelow1993theory</bcf:citekey>
-    <bcf:citekey order="16">petermann2012laser</bcf:citekey>
-    <bcf:citekey order="17">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="18">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="19">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="20">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="12">vahala1985observation</bcf:citekey>
+    <bcf:citekey order="13">feiste1998optimization</bcf:citekey>
+    <bcf:citekey order="13">kjebon1997two</bcf:citekey>
+    <bcf:citekey order="13">chacinski2010impact</bcf:citekey>
+    <bcf:citekey order="14">vahala1984detuned</bcf:citekey>
+    <bcf:citekey order="15">kjebon2002experimental</bcf:citekey>
+    <bcf:citekey order="16">vahala1984detuned</bcf:citekey>
+    <bcf:citekey order="16">chacinski2010impact</bcf:citekey>
+    <bcf:citekey order="17">ohtsubo2012semiconductor</bcf:citekey>
+    <bcf:citekey order="18">bandelow1993theory</bcf:citekey>
+    <bcf:citekey order="19">petermann2012laser</bcf:citekey>
+    <bcf:citekey order="20">schatz1996enhanced</bcf:citekey>
     <bcf:citekey order="21">montrosset2014laser</bcf:citekey>
-    <bcf:citekey order="22">agrawal2013semiconductor</bcf:citekey>
-    <bcf:citekey order="23">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="22">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="23">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="24">reithmaier2005modulation</bcf:citekey>
+    <bcf:citekey order="25">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="26">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="27">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="28">montrosset2014laser</bcf:citekey>
+    <bcf:citekey order="29">agrawal2013semiconductor</bcf:citekey>
+    <bcf:citekey order="30">devaux1993simple</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
