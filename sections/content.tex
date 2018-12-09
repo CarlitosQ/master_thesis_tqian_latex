@@ -325,7 +325,7 @@ By using \autoref{eq:RIN_2} and \autoref{eq:RIN_3}, the value of $RIN_{laser}$ c
 \end{equation}
 where $e$ is the elementary charge, $I_{avg}$ denotes the detected average photocurrent, $N_{thermal}$ is the measured noise floor of the lightwave signal analyzer in a 1-Hz bandwidth.
 
-The RIN comparison for the two configurations are shown in \autoref{fig:RIN_cleaved_and_lensed}. The RIN value for laser w/o feedback ranges from $-144.086 \ dB/Hz$ to $-141.507 \ dB/Hz$ while for lase w/ feedback it has two parts: without the spikes it ranges from $-146.283 \ dB/Hz$ to $-140.216 \ dB/Hz$, which is lower than the case w/o feedback; the spikes appear in \autoref{fig:RIN_cleaved_and_lensed} (b) are correspoinding to the additional mode hopping behavior in \autoref{fig:OSA_and_SMSR} (b), which indicates the appearing of the undamped RO, will increase the RIN value.
+The RIN comparison for the two configurations are shown in \autoref{fig:RIN_cleaved_and_lensed}. The RIN value for laser w/o feedback ranges from $-144.086 \ dB/Hz$ to $-141.507 \ dB/Hz$ while for lase with feedback it has two parts: without the spikes it ranges from $-146.283 \ dB/Hz$ to $-140.216 \ dB/Hz$, which is lower than the case without feedback; the spikes appear in \autoref{fig:RIN_cleaved_and_lensed} (b) are correspoinding to the additional mode hopping behavior in \autoref{fig:OSA_and_SMSR} (b), which indicates the appearing of the undamped RO, will increase the RIN value.
 
 \begin{figure}[ht]
     \centering
@@ -335,14 +335,14 @@ The RIN comparison for the two configurations are shown in \autoref{fig:RIN_clea
 \end{figure}
 
 \section{Bandwidth Measurement}\label{sec:bandwidth_measurement}
+Measurement of the bandwidth by small signal modulation is presented as well as the bandwidth enhancement by detuned loading condition and the undamped relaxation oscillation.
 \subsection{Small Signal Modulation}
-The frequency response of the laser transmitter under small signal modulation is found by the usual assumption of a harmonic current modulation superimposed on a constant bias above threshold. The modulation bandwidth $f_{3dB}$ is a measure of the maximum modulation ability in semiconductor lasers through the injection current. It is usually defined as the frequency at which the modulation response has dropped by $3 \ dB$ relative to its zero freqeuncy value \cite{ohtsubo2012semiconductor, agrawal2013semiconductor}. The characteristics of the small signal modulation are mainly determined by the relaxation oscillation frequency $f_r$, which indicated by the position of the peak in the modulation response.
-
+The frequency response of a laser transmitter under small signal modulation is found by the usual assumption of a harmonic current modulation superimposed on a constant bias above threshold [R. Tucker 1985]. The modulation bandwidth $f_{3dB}$ is a measure of the maximum modulation ability in semiconductor lasers through the injection current. It is usually defined as the frequency at which the modulation response has dropped by $3 \ dB$ relative to its zero freqeuncy value \cite{ohtsubo2012semiconductor, agrawal2013semiconductor}. The characteristics of the small signal modulation in a normal laser are mainly determined by the relaxation oscillation frequency $f_r$, which indicated by the position of the peak in the modulation response. Comparision of the bandwidth measurements for our tunable DBR laser is shown in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed}. Without feedabck, the increase of the relaxation oscillation freqeuncy $f_r$ along with rising of the gain current is observed and the intensity drop is due to the higher damping facor achieved at the higher gain current. The maximum bandwidth achieved is $8.7 \ GHz$. However, our DBR laser operates differently with feedback, the intensity of the relaxation oscillation peak got enhanced at gain value $I_{gain}$ between $60 \ mA$ and $70 \ mA$, in this case the maximum achieved bandwidth is $12.5 \ GHz$. The reason for the enhancement of the bandwidth will be further studied in \autoref{subsec:detuned_laoding_measurement} and \autoref{subsec:undamped_RO_measurement}.
 % From a practical viewpoint the quantity of interest is the modulation bandwidth $\nu_B$ which indicates the frequency range over which the laser responds to the current modulation. It is usually defined as the frequency at which the modulation response has dropped by 3 dB relative to its low-frequency or DC value \cite{agrawal2013semiconductor}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/bandwidth_gain_scan_cleaved_and_lensed_grating_4679.png}
-    \caption{Bandwidth measurements of a normal tunable laser. (a) Without feedback, the $f_{3dB}$ show a normal behavior that first increase with the applied gain current and then decrease, (b) with feedback, the prominant peaks at 70 mA and 75 mA are due to the undamped RO peaks, at this condition, the $f_{3dB}$ got increased compare with the lase without feedback.}
+    \caption{Bandwidth measurements of a normal tunable DBR laser. (a) Without feedback, the $f_{3dB}$ show a normal behavior that first increase with the applied gain current and then decrease, (b) with feedback, the prominant peaks at 70 mA and 75 mA are due to the undamped RO peaks, at this condition, the $f_{3dB}$ got increased compare with the lase without feedback.}
     \label{fig:bandwidth_gain_scan_cleaved_and_lensed}
 \end{figure}
 
@@ -354,24 +354,24 @@ The frequency response of the laser transmitter under small signal modulation is
 
 % The relaxation oscillation frequency is a measure of the maximum modulation ability in semiconductor lasers through the injection current. Above the relaxation oscillation, the modulation efficiency is greatly degraded and intensity modulation through the injection current becomes difficult. [Semiconductor Lasers. Stability, Instability and Chaos.pdf]
 
-\textit{The laser seeks a steady-state operation which maximizes feedback. When external feedback is present, the state corresponding to maximum feedback occurs when there is phase alignment  between the semiconductor cavity field and the reflected field. A carrier number change $n$ will change the resonance frequency of the semiconductor cavity. This in turn causes a phase change $\phi$ between the laser field and the reflected field. This acts to decrease the light intensity in proportion to $1-cos{\phi}\approx\frac{\phi^2}{2}$, which decreases the rate of stimulated emission and further increases $n$. This increase in $n$ again raises the cavity resonance frequency, causing the phase misalignment $\phi$ to continue to grow. Instability occurs for finite fluctuations of $\phi$ and $n$ when this effect becomes greater than the restoring forces giving rise to the relaxation oscillations described above.}
+% \textit{The laser seeks a steady-state operation which maximizes feedback. When external feedback is present, the state corresponding to maximum feedback occurs when there is phase alignment  between the semiconductor cavity field and the reflected field. A carrier number change $n$ will change the resonance frequency of the semiconductor cavity. This in turn causes a phase change $\phi$ between the laser field and the reflected field. This acts to decrease the light intensity in proportion to $1-cos{\phi}\approx\frac{\phi^2}{2}$, which decreases the rate of stimulated emission and further increases $n$. This increase in $n$ again raises the cavity resonance frequency, causing the phase misalignment $\phi$ to continue to grow. Instability occurs for finite fluctuations of $\phi$ and $n$ when this effect becomes greater than the restoring forces giving rise to the relaxation oscillations described above.}
 
-\textit{steady-state operation (phase alignment of the cavity field and reflected field)}
+% \textit{steady-state operation (phase alignment of the cavity field and reflected field)}
 
-\textit{In steady-state operation, the laser with reflective feedback can be thought of as phase locked to the reflected field. The phenomenon that we describe is driven by large fluctuations in spontaneous emission that dislodge the laser from this locked state that is stable for small fluctuations. [Henry, Kazarinov 1986]}
+% \textit{In steady-state operation, the laser with reflective feedback can be thought of as phase locked to the reflected field. The phenomenon that we describe is driven by large fluctuations in spontaneous emission that dislodge the laser from this locked state that is stable for small fluctuations. [Henry, Kazarinov 1986]}
 
 \subsection{Detuend loading condition}\label{subsec:detuned_laoding_measurement}
-Operating the tunable DBR laser under the detuned loading condition was measured and the result is shown in \autoref{fig:detuned_loading}. The measurement was performed by stabilizing the device at \SI{25}{\celsius} and using a gain current $I_{gain}$ of $75 \ mA$. When the laser is lasing on the slope of the grating response, the side modes have a different gain spectrum relative to the peak of the grating response, which introduces the asymmetric behavior of the side modes. In this case, when the left side mode is higher than the right one, means the lasing mode is operating at the longer wavelength side of the grating response, and vice versa. By increasing the phase current $I_{phase}$ from $14 \ mA$ to $20 \ mA$, the lasing mode is tuned from the longer wavelength side of the grating response to the shorter wavelength side. The maximum $f_{3dB}$ achieved at the longer wavelength side (red curve) is $10.6 \ GHz$ and the minimum (grey curve) is $8.5 \ GHz$. These two operating points also correspoinds to the red and grey points in \autoref{fig:PP_resonance_operation_principle}.
+Operating the tunable DBR laser under the detuned loading condition was measured without feedback and the result is shown in \autoref{fig:detuned_loading}. The measurement was performed by stabilizing the device at \SI{25}{\celsius} and using a gain current $I_{gain}=75 \ mA$. When the laser is lasing on the slope of the grating response, the side modes have a different gain spectrum relative to the peak of the grating response, which introduces the asymmetric behavior of the side modes. In this case, when the left side mode is higher than the right one, means the lasing mode is operating at the longer wavelength side of the grating response, and vice versa. By increasing the phase current $I_{phase}$ from $14 \ mA$ to $20 \ mA$, the lasing mode is tuned from the longer wavelength side of the grating response to the shorter wavelength side. The maximum $f_{3dB}$ achieved at the longer wavelength side (red curve) is $10.6 \ GHz$ and the minimum (grey curve) is $8.5 \ GHz$. These two operating points also correspoinds to the red and grey points in \autoref{fig:PP_resonance_operation_principle}. By exploiting the detuned loading effect with the best parameters from \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (a), the maximum achievable bandwidth is still $2 \ GHz$ lower than the one achieved by feedback, which means the enhancement in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (b) is achieved not purely by detuned loading conditon without feedback effects.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\linewidth]{figures/detuned_loading.png}
-    \caption{(a) Bandwidth enhancement with the detuned loading condition on DBR tunable laser. The red curve is detuned to the longer wavelength side of the grating response and it shows an increased bandwidth of 2.1 GHz compared to the grey curve without bandwidth enhancement effect. (b), (c) are the correspoinding spectra at these two operation points.}
+    \caption{(a) Bandwidth enhancement with the detuned loading condition on DBR tunable laser. The red curve is detuned to the longer wavelength side of the grating response and it shows an increased bandwidth of 2.1 GHz compared to the grey curve without bandwidth enhancement effect, (b) spectrum when laser operates at longer wavelength side, (c) spectrum when laser operates at lower wavelength side.}
     \label{fig:detuned_loading}
 \end{figure}
 
 \subsection{Undamped Relaxation Oscillation}\label{subsec:undamped_RO_measurement}
-For the laser under undamped RO conditions, not all the undamped behavior lead to the good performance of the laser. As shown in \autoref{fig:undamped_RO}, the appearing of the undamped RO peak leads to the carrier-photon resonance appears at a higher relaxation oscillation frequency which permits a higher $f_{3dB}$ value. As the side peaks slowly move towards the main peak with increasing intensity, the carrier-photon resonance become stronger with a slightly decreased relaxation oscillating frequency. When more side peaks appear in \autoref{fig:undamped_RO} (c.1), the undamped RO behavior is very strong which lead to a broder lineshape and the intensity modulation shows prominent peaks with frequency correspoinding to the mode spacing of the side peaks. This last behavior leads to broadened lineshape and significantly decreases the $f_{3dB}$ compare to the other two cases.
+The feedback from the chip facet behaves as a perturbation for the normal tunable DBR laser which leads to undamped RO conditons with different phase conditions. The measurements were performed with the same setting as in \autoref{subsec:detuned_laoding_measurement} and \autoref{fig:undamped_RO_phase_scan}, the results are in \autoref{fig:undamped_RO}. The appearing of the undamped RO peak leads to the carrier-photon resonance appears at a higher relaxation oscillation frequency which permits a higher $f_{3dB}$ value of $14.6 \ GHz$. As the side peaks slowly move towards the main peak with increasing intensity, the carrier-photon resonance become stronger with a slightly decreased relaxation oscillating frequency which leads to a $f_{3dB}$ value of $14.0 \ GHz$. As more side peaks appear in \autoref{fig:undamped_RO} (e), the undamped RO behavior is very strong which lead to a broder lineshape and the intensity modulation shows prominent peaks with frequency correspoinding to the mode spacing of the side peaks. This last behavior leads to broadened lineshape and significantly decreases the $f_{3dB}$ compare to the other two cases. The increase of the relaxation oscillation intensity and the enhancement of bandwidth shown in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (b) is certainly related to the occurence of the side peaks as shown in \autoref{fig:undamped_RO} (a)-(d).
 
 \begin{figure}[ht]
     \centering
@@ -380,24 +380,30 @@ For the laser under undamped RO conditions, not all the undamped behavior lead t
     \label{fig:undamped_RO}
 \end{figure}
 
-\subsection{}
-\textit{Chirp arises because the frequency of the laser mode depends on the carrier number in the active region. Above threshold, the carrier number changes because of two effects: spectral hole burning prohibits the perfect pinning of the carrier number and permits adiabatic chirp, and during transients, there are relaxation oscillations of carrier number, which cause dynamic chirp. [Kazarinov 1987]}
+% \subsection{}
+% \textit{Chirp arises because the frequency of the laser mode depends on the carrier number in the active region. Above threshold, the carrier number changes because of two effects: spectral hole burning prohibits the perfect pinning of the carrier number and permits adiabatic chirp, and during transients, there are relaxation oscillations of carrier number, which cause dynamic chirp. [Kazarinov 1987]}
 
-\textit{Current modulation of the active region results in a modulation of both the photon density and the carrier density. The modulation of the carrier density modulates the gain; however, it also modulates the index of the active region na . As a result, the optical length of the cavity is modulated by the current, causing the resonant mode to shift back and forth in frequency. [Larry A. Coldren.pdf]}
+% \textit{Current modulation of the active region results in a modulation of both the photon density and the carrier density. The modulation of the carrier density modulates the gain; however, it also modulates the index of the active region na . As a result, the optical length of the cavity is modulated by the current, causing the resonant mode to shift back and forth in frequency. [Larry A. Coldren.pdf]}
 
-If we consider the case discussed earlier where the semiconductor cavity is extended by a passive section of length $L_1$, with a nonreflective transition between the two sections, the reflection at the semiconductor section constant in magnitude, but has a frequency-dependent phase shift with $d\phi_r/d\omega = 2L_1/v_g1$ where $2L/v_g1$ is the roundtrip time in the external cavity. Therefore, in this case $B=0$, the chirp reduction factor is [Kazarinov 1987]
+% If we consider the case discussed earlier where the semiconductor cavity is extended by a passive section of length $L_1$, with a nonreflective transition between the two sections, the reflection at the semiconductor section constant in magnitude, but has a frequency-dependent phase shift with $d\phi_r/d\omega = 2L_1/v_g1$ where $2L/v_g1$ is the roundtrip time in the external cavity. Therefore, in this case $B=0$, the chirp reduction factor is [Kazarinov 1987]
 
 
 
 \section{Chirp Parameter Measurement}\label{sec:chirp_measurement}
-($\alpha$-Factor)
-Light chirping is a parasitic property of intensity modulated light. It originates in light emitters that produce a phase shift as the intensity is varied \cite{devaux1993simple}. Semiconductor lasers exhibit a particular nonlinearity in the interaction of the light with the active medium, which distinguishes them from all other lasers. The nonlinearity originates from the physics of the semiconductor band structure, since the photon generation typically occurs due to interband transitions. The gain spectrum of such lasers therefore does not exhibit a symmetric peak, as atomic transitions do, but has a strongly asymmetric shape. This affects the dispersive properties of the lasers as well, since those properties are connected via the Kramers-Kronig relation. As a consequence, the dispersion curve for the refractive index exhibits its zero crossing at higher frequency than the maximum of the gain spectrum. If the gain changes, e.g., by a change of the carrier density, the refractive index changes as well, which would not be the case for atomic transitions. Hence, changes in gain are in semiconductor lasers associated with changes in refractive index and vice versa. Since with a change of refractive index of the medium the optical frequency and thus the optical phase changes, one also speaks of amplitude phase coupling. A small change in the intensity (induced, e.g., by a change in the injection current, by dynamical instabilities, or even a spontaneous emission event) causes an excess perturbation of the phase of the lasing mode. In the rate equation description, the effect is taken into account via the so-called $\alpha$ parameter, which is also referred to as Henry parameter or linewidth enhancement factor. It is defined as
-\begin{equation}
-    \alpha=-\frac{\dv*{\chi_r(n)}{n}}{\dv*{\chi_i(n)}{n}}
-\end{equation}
+% Light chirping is a parasitic property of intensity modulated light. It originates in light emitters that produce a phase shift as the intensity is varied \cite{devaux1993simple}. Semiconductor lasers exhibit a particular nonlinearity in the interaction of the light with the active medium, which distinguishes them from all other lasers. The nonlinearity originates from the physics of the semiconductor band structure, since the photon generation typically occurs due to interband transitions. The gain spectrum of such lasers therefore does not exhibit a symmetric peak, as atomic transitions do, but has a strongly asymmetric shape. This affects the dispersive properties of the lasers as well, since those properties are connected via the Kramers-Kronig relation. As a consequence, the dispersion curve for the refractive index exhibits its zero crossing at higher frequency than the maximum of the gain spectrum. If the gain changes, e.g., by a change of the carrier density, the refractive index changes as well, which would not be the case for atomic transitions. Hence, changes in gain are in semiconductor lasers associated with changes in refractive index and vice versa. Since with a change of refractive index of the medium the optical frequency and thus the optical phase changes, one also speaks of amplitude phase coupling. A small change in the intensity (induced, e.g., by a change in the injection current, by dynamical instabilities, or even a spontaneous emission event) causes an excess perturbation of the phase of the lasing mode. In the rate equation description, the effect is taken into account via the so-called $\alpha$ parameter, which is also referred to as Henry parameter or linewidth enhancement factor. It is defined as
 
-\subsection{Measurement with LCA}\label{subsec:measurement_with_LCA}
-The network analyzer of \autoref{fig:LCA_setup} measures the small-signal frequency response of a light emitter, a dispersive medium and a light receiver. The dispersive medium is 81 $km$ of standard, single-mode fiber (zero dispersion at 1.3 $\mu m$) from and Er-doped fiber amplifiers pumped at 1.55 $\mu m$. Resonance frequencies are observed as sharp peaks in the frequency response.
+
+Light chirping can be defined as the instantaneous change of the central wavelength or optical frequency in response to
+variations in the optical power. Two main contributions of the frequency chirp are distinguished, one is a transient chirp component that evolve with the time deriative of the optical power, and is scaled by $\alpha$, normally called linewidth enhancement factor when dealing with lasers. Another one is an adiabatic chirp, producing a frequency shift proportional to the instantaneous optical power, and scaled, in addition to $\alpha$, by parameter $\kappa$, which is associated to the nonlinear gain \cite{villafranca2007precise, harder1983measurement}. Here only the transient chirp is considered. 
+
+% i.e. a residual frequency modulation of an amplitude modulated optical wave
+% the $\alpha$ parameter is defined as 
+% \begin{equation}
+%     \alpha=-\frac{\dv*{\chi_r(n)}{n}}{\dv*{\chi_i(n)}{n}}
+% \end{equation}
+
+\subsection{Measurement with Lightwave Component Analyzer}\label{subsec:measurement_with_LCA}
+The network analyzer of \autoref{fig:LCA_setup} measures the small signal frequency response of a light emitter, a dispersive medium and a light receiver. The dispersive medium is a standardd single mode fiber of $81 \ km$ of standard and an Er-doped fiber amplifier pumped at 1.55 $\mu m$. Resonance frequencies are observed as sharp peaks in the frequency response.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.5\linewidth]{figures/LCA_setup.png}
@@ -405,13 +411,23 @@ The network analyzer of \autoref{fig:LCA_setup} measures the small-signal freque
     \label{fig:LCA_setup}
 \end{figure}
 
-The resonance frequencies $f_u$ of Fig.2 corresponds to the $u^{th}$-zeros of xx. They follow a very simple law:
+The output optical intensity is assumed as \cite{devaux1993simple}
 \begin{equation}
-    f_u^2L=\frac{c}{2D\lambda ^2}(1+2u-\frac{2}{\pi}arctan(\alpha))
-    \label{eq:LCA_equation}
+    I=I_0(1+mcos(2\pi ft)) \qquad with \ m \ll 1
+    \label{eq:chirp_optical_intensity}
+\end{equation}
+with $m$ being the modulation depth and $f$ the modulation frequency of light intensity. The frequency response which is measured by the set-up described above is then \cite{devaux1993simple}
+\begin{equation}
+    I_f=I_0m\sqrt{1+\alpha^2}\abs{\cos\qty(\frac{\pi\lambda^2DLf^2}{c}+\arctan(\alpha))}.
+    \label{eq:chirp_optical_frequency}
 \end{equation}
 
-The equation is the result of two simultaneous interferences between the carrier and the two sidebands. Plotting $f_u^2L$ versus $2u$ gives a straight line whose slope and position yield the dispersion and the chirp parameter by liner regression.
+The resonance frequencies $f_u$ (as shown in \autoref{fig:chirp_cleaved_and_lensed} (a), (c)) correspond to the $u^{th}$-zeros of \autoref{eq:chirp_optical_frequency}. They follow the following equation \cite{devaux1993simple}
+\begin{equation}
+    f_u^2L=\frac{c}{2D\lambda ^2}\qty(1+2u-\frac{2}{\pi}arctan(\alpha))
+    \label{eq:LCA_equation}
+\end{equation}
+which is the result of two simultaneous interferences between the carrier and the two sidebands. Plotting $f_u^2L$ versus $2u$ gives a straight line whose slope and position yield the dispersion and the chirp parameter by liner regression. The frequency of the first dip is determined primarily by $\alpha$, and to a lesser extent by $D$, whereas the frequency of the second dip is determined primarily by $D$ and to a lesser extent by $\alpha$ [Srinivasan, Cartledge 1995].
 
 \begin{figure}[ht]
     \centering
@@ -423,10 +439,10 @@ The equation is the result of two simultaneous interferences between the carrier
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{multirow}
-\begin{table}[ht]
+\begin{table}[!htb]
     \centering
-    \caption{My caption}
-    \label{my-label}
+    \caption{Comparision of achieved $\alpha$ parameter value. Laser with feedback in general shows a decreased $\alpha$ value at all current values except for $80 \ mA$.}
+    \label{tab:chirp_alpha_comparison}
     \begin{tabular}{@{}lll@{}}
     \toprule
     \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c}{$\alpha$} \\ \cmidrule(l){2-3} 
@@ -442,25 +458,39 @@ The equation is the result of two simultaneous interferences between the carrier
 \end{table}
 
 \subsection{AM-FM Index Method}
-The experimental arrangement for measuring the intensity and phase modulation index is shown in Fig. 1. The semiconductor laser is biased above threshold and a small sinusoidally varying current at frequency $\Omega$ is superimposed. The intensity and spectral density of the radiation field are given by
+Transient chirp parameter $\alpha$ can also be obtained from measurements of the optical intensity spectrum. For this measurement technique, the ratio of residual phase modulation to amplitude modulation is measured from the optical spectrum of the laser when it is modulated with a sinusoidal signal of frequency $f$, the output optical intensity is assumed same as \autoref{eq:chirp_optical_intensity}. The optical intensiy spectrum of this signal is characterized by and optical carrier with power $I_0$, and two first oder sidebans with average power given by \cite{harder1983measurement}
 \begin{equation}
-    Intensity: E_0^2[1+mcos(\Omega t)]
+    \overline{I_{\pm 1}}=I_0\qty(\frac{m}{4})^2\qty(1+\qty(\frac{2p}{m})^2) \qquad with \ m \ll 1
 \end{equation}
+where $p$ is the phase modulation index \cite{harder1983measurement}, which is related to the transient and adiabatic chirp parmaerters by \cite{bjerkan1996measurement}
 \begin{equation}
-    Spectrum: Center \ line \ at \ \omega_1: E_0^2[J_0^2(\beta)+m^2J_1^2(\beta)]
-    \label{eq:alpha_2}
+    \frac{2p}{m}=\alpha\sqrt{1+\qty(\frac{f_c}{f})^2}
+    \label{eq:chirp_alpha}
 \end{equation}
+where $f_c$ is the chirp frequency. For modulation frequencies $f \gg f_c$, \autoref{eq:chirp_alpha} results to \cite{harder1983measurement}
 \begin{equation}
-    First \ sidebands \ at \
-    \ \omega_1 \pm \Omega: E_0^2\big\{J_1^2(\beta)+1[(m/2)(J_2(\beta)-J_0(\beta))]^2\big\}
-    \label{eq:alpha_3}
+    \frac{2p}{m}=\alpha
+    \label{eq:chirp_alpha_2}
 \end{equation}
-
-The phase modulation index $\beta$ can be found by measuring the relative sideband strength and using \autoref{eq:alpha_2} and \autoref{eq:alpha_3}. The factor $\alpha_m$ is then obtained as $\alpha_m = -2(\beta/m)$.
+By measuring the power in the carrier and the sidebands from the optical spectrum the paratmeter $p$ can be obtained, the value of $m$ can be obtained from the instanteneous power signal, therefore $\alpha$ parameter is characterized \cite{harder1983measurement, villafranca2007precise}. The $\alpha$ parameter measurement results are shown in \autoref{fig:Alpha_Cleaved_and_Lensed}. Lower $\alpha$ value is achieved for laser with feedback with value of -1.2 compare to the without feedback with value of -2.2. The $\alpha$ parameter measurement result shows the similar result as the method in \autoref{subsec:measurement_with_LCA}, with which we can confirm the $\alpha$ parameter under feedback conditions can be decreased.
+% The experimental arrangement for measuring the intensity and phase modulation index is shown in Fig. 1. The semiconductor laser is biased above threshold and a small sinusoidally varying current at frequency $\Omega$ is superimposed. The intensity and spectral density of the radiation field are given by [Harder, Vahala et al 1983]
+% \begin{equation}
+%     Intensity: E_0^2[1+mcos(\Omega t)]
+% \end{equation}
+% \begin{equation}
+%     Spectrum: Center \ line \ at \ \omega_1: E_0^2[J_0^2(\beta)+m^2J_1^2(\beta)]
+%     \label{eq:alpha_2}
+% \end{equation}
+% \begin{equation}
+%     First \ sidebands \ at \
+%     \ \omega_1 \pm \Omega: E_0^2\big\{J_1^2(\beta)+1[(m/2)(J_2(\beta)-J_0(\beta))]^2\big\}
+%     \label{eq:alpha_3}
+% \end{equation}
+% The phase modulation index $\beta$ can be found by measuring the relative sideband strength and using \autoref{eq:alpha_2} and \autoref{eq:alpha_3}. The factor $\alpha_m$ is then obtained as $\alpha_m = -2(\beta/m)$.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/Alpha_Cleaved_and_Lensed.png}
-    \caption{Comparison of $\alpha$ parameter}
+    \caption{(a) Measurement with cleaved fiber with oil, the light grey squares are correspoinding to the unstable points mentioned before, (b) measurement with lensed fiber, lower $alpha$ parameter value is achieved.}
     \label{fig:Alpha_Cleaved_and_Lensed}
 \end{figure}
 

@@ -2032,7 +2032,17 @@
     <bcf:citekey order="30">petermann2012laser</bcf:citekey>
     <bcf:citekey order="31">ohtsubo2012semiconductor</bcf:citekey>
     <bcf:citekey order="31">agrawal2013semiconductor</bcf:citekey>
-    <bcf:citekey order="32">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="32">villafranca2007precise</bcf:citekey>
+    <bcf:citekey order="32">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="33">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="34">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="35">devaux1993simple</bcf:citekey>
+    <bcf:citekey order="36">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="37">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="38">bjerkan1996measurement</bcf:citekey>
+    <bcf:citekey order="39">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="40">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="40">villafranca2007precise</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
