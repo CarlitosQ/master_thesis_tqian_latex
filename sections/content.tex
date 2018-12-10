@@ -287,15 +287,27 @@ The results of linewidth measurement are shown in \autoref{fig:LB_Cleaved_and_Le
     \label{fig:LB_Cleaved_and_Lensed}
 \end{figure}
 
-\begin{table}[ht]
+% \begin{table}[ht]
+%     \centering
+%     \caption{Comparison between the linewidth reduction value achieved by laser w/ and w/o feedback and the predicated reduction value.}
+%     \begin{tabular}{@{}lllll@{}}
+%     \toprule
+%                                              & Cleaved with oil & Lensed          & Reduction & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Reduction\\ (Predicated)\end{tabular}} \\ \midrule
+%     \multicolumn{1}{c}{$\Delta \nu \ (MHz)$} & 0.522 @ Index 52 & 0.317 @ Index 4 & 1.647     & 1.11                                                                                 \\ \bottomrule
+%     \end{tabular}
+%     \label{tab:linewidth_comparision}
+% \end{table}
+
+\begin{table}[]
     \centering
     \caption{Comparison between the linewidth reduction value achieved by laser w/ and w/o feedback and the predicated reduction value.}
+    \label{tab:linewidth_comparision}
     \begin{tabular}{@{}lllll@{}}
     \toprule
-                                             & Cleaved with oil & Lensed          & Reduction & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Reduction\\ (Predicated)\end{tabular}} \\ \midrule
-    \multicolumn{1}{c}{$\Delta \nu \ (MHz)$} & 0.522 @ Index 52 & 0.317 @ Index 4 & 1.647     & 1.11                                                                                 \\ \bottomrule
+    \multirow{2}{*}{} & \multirow{2}{*}{w/o feedback} & \multirow{2}{*}{w/ feedback} & \multicolumn{2}{c}{Linewdith reduction factor $F^2$} \\
+                      &                               &                              & Measured               & Predicated               \\ \midrule
+    $\Delta\nu (MHz)$ & 0.522 @ Index 52              & 0.317 @ Index 4              & 1.647                     & 1.11                     \\ \bottomrule
     \end{tabular}
-    \label{tab:linewidth_comparision}
 \end{table}
 
 \section{Relative Intensity Noise (RIN) Measurement}\label{sec:RIN_measurement}
@@ -365,7 +377,7 @@ Operating the tunable DBR laser under the detuned loading condition was measured
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.6\linewidth]{figures/detuned_loading.png}
+    \includegraphics[width=.7\linewidth]{figures/detuned_loading.png}
     \caption{(a) Bandwidth enhancement with the detuned loading condition on DBR tunable laser. The red curve is detuned to the longer wavelength side of the grating response and it shows an increased bandwidth of 2.1 GHz compared to the grey curve without bandwidth enhancement effect, (b) spectrum when laser operates at longer wavelength side, (c) spectrum when laser operates at lower wavelength side.}
     \label{fig:detuned_loading}
 \end{figure}
@@ -375,7 +387,7 @@ The feedback from the chip facet behaves as a perturbation for the normal tunabl
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\linewidth]{figures/Umdamped_RO_and_bandwidth_grating_4621.png}
+    \includegraphics[width=\linewidth]{figures/Undamped_RO_and_bandwidth_grating_4621.png}
     \caption{Laser spectra and their correspoinding intensity modulation curve. (a) Appearing of the undamped RO peak leads to a higher carrier-photon resonance in (b), (c) growing of the side peaks leads to increase of the carrier-photon resonance peak in (d), (e) drastic undamped RO leads to broadened lineshape and decreased modualiton bandwidth in (f).}
     \label{fig:undamped_RO}
 \end{figure}
@@ -403,11 +415,11 @@ variations in the optical power. Two main contributions of the frequency chirp a
 % \end{equation}
 
 \subsection{Measurement with Lightwave Component Analyzer}\label{subsec:measurement_with_LCA}
-The network analyzer of \autoref{fig:LCA_setup} measures the small signal frequency response of a light emitter, a dispersive medium and a light receiver. The dispersive medium is a standardd single mode fiber of $81 \ km$ of standard and an Er-doped fiber amplifier pumped at 1.55 $\mu m$. Resonance frequencies are observed as sharp peaks in the frequency response.
+The network analyzer of \autoref{fig:LCA_setup} measures the small signal frequency response of a light emitter, a dispersive medium and a light receiver. The dispersive medium is a standard single mode fiber of $81 \ km$ and an Er-doped fiber amplifier pumped at 1.55 $\mu m$. Resonance frequencies are observed as sharp peaks in the frequency response.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.5\linewidth]{figures/LCA_setup.png}
-    \caption{Schematic set-up for chirp parameter measurement.}
+    \caption{Schematic set-up for chirp parameter measurement using Lightwave Component Analyzer.}
     \label{fig:LCA_setup}
 \end{figure}
 
@@ -427,33 +439,32 @@ The resonance frequencies $f_u$ (as shown in \autoref{fig:chirp_cleaved_and_lens
     f_u^2L=\frac{c}{2D\lambda ^2}\qty(1+2u-\frac{2}{\pi}arctan(\alpha))
     \label{eq:LCA_equation}
 \end{equation}
-which is the result of two simultaneous interferences between the carrier and the two sidebands. Plotting $f_u^2L$ versus $2u$ gives a straight line whose slope and position yield the dispersion and the chirp parameter by liner regression. The frequency of the first dip is determined primarily by $\alpha$, and to a lesser extent by $D$, whereas the frequency of the second dip is determined primarily by $D$ and to a lesser extent by $\alpha$ [Srinivasan, Cartledge 1995].
+which is the result of two simultaneous interferences between the carrier and the two sidebands. Plotting $f_u^2L$ versus $2u$ gives a straight line whose slope and position yield the dispersion and the chirp parameter by linear regression. The frequency of the first dip is determined primarily by $\alpha$, and to a lesser extent by $D$, whereas the frequency of the second dip is determined primarily by $D$ and to a lesser extent by $\alpha$, $D$ is the fiber dispersion coefficient \cite{srinivasan1995using}.
+
+The frequency response form LCA and fitted linear regression data are shown in \autoref{fig:chirp_cleaved_and_lensed}, the obtained $\alpha$ parameter in two conditions is compared in \autoref{tab:chirp_alpha_comparison}. The deviated $\alpha$ parameter at $80 \ mA$ with a value of 4.13 can be clearly seen from \autoref{fig:chirp_cleaved_and_lensed} (c), whereas the position of the first dip of the purple curve which indicates $80 \ mA$ is devaited from the other current values, we think it may come from the effect of undmaped RO since in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (b) at $80 \ mA$ the self modulation introduced increase of relaxation oscillation peak appears. Except for this current value, the achieved $\alpha$ parmaerters with feedback are generally lower than the without feedback case. The different calculated $F$ factor may come from shifting of the phase by increasing the current value.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/chirp_cleaved_and_lensed_4679.png}
-    \caption{}
+    \caption{Frequency response from the LCA measurement, (a) without feedabck, (c) with feedabck. Resonance frequencies squared (x-axis of (a) and (c)) times fiber length ($81 \ km$) versus two times the order of the resonance, (b) without feedback, (d) with feedback. Linear regression allows to find the chirp parameter and the dispersion from \autoref{eq:LCA_equation}.}
     \label{fig:chirp_cleaved_and_lensed}
 \end{figure}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{multirow}
-\begin{table}[!htb]
+\begin{table}[ht]
     \centering
-    \caption{Comparision of achieved $\alpha$ parameter value. Laser with feedback in general shows a decreased $\alpha$ value at all current values except for $80 \ mA$.}
+    \caption{Comparision of achieved $\alpha$ parameter value. Laser with feedback in general shows a decreased $\alpha$ value at all current values except for $80 \ mA$. The different calculated $F$ factor may come from shifting of the phase by increasing the current value.}
     \label{tab:chirp_alpha_comparison}
-    \begin{tabular}{@{}lll@{}}
+    \begin{tabular}{@{}llll@{}}
     \toprule
-    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c}{$\alpha$} \\ \cmidrule(l){2-3} 
-                                      & w/o feedback  & w/ feedback  \\ \midrule
-    40                                & 3.164         & 2.499        \\
-    50                                & 3.017         & 2.247        \\
-    60                                & 2.687         & 2.439        \\
-    70                                & 3.079         & 2.593        \\
-    80                                & 3.003         & 3.095        \\
-    90                                & 2.996         & 2.389        \\
-    100                               & 2.605         & 2.472        \\ \bottomrule
+    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{2}{c}{$\alpha$} & \multicolumn{1}{c}{$F$} \\
+                                      & w/o feedback   & w/feedback  & Chirp reduction factor  \\ \midrule
+    40                                & 3.904          & 2.768       & \multicolumn{1}{c}{1.410}                   \\
+    50                                & 3.771          & 2.383       & \multicolumn{1}{c}{1.582}                   \\
+    60                                & 3.336          & 2.658       & \multicolumn{1}{c}{1.255}                   \\
+    70                                & 3.837          & 2.998       & \multicolumn{1}{c}{1.280}                   \\
+    80                                & 3.756          & 4.13        & \multicolumn{1}{c}{0.909}                   \\
+    90                                & 3.97           & 2.934       & \multicolumn{1}{c}{1.353}                   \\
+    100                               & 3.299          & 2.912       & \multicolumn{1}{c}{1.133}                   \\ \bottomrule
     \end{tabular}
 \end{table}
 
@@ -472,7 +483,9 @@ where $f_c$ is the chirp frequency. For modulation frequencies $f \gg f_c$, \aut
     \frac{2p}{m}=\alpha
     \label{eq:chirp_alpha_2}
 \end{equation}
-By measuring the power in the carrier and the sidebands from the optical spectrum the paratmeter $p$ can be obtained, the value of $m$ can be obtained from the instanteneous power signal, therefore $\alpha$ parameter is characterized \cite{harder1983measurement, villafranca2007precise}. The $\alpha$ parameter measurement results are shown in \autoref{fig:Alpha_Cleaved_and_Lensed}. Lower $\alpha$ value is achieved for laser with feedback with value of -1.2 compare to the without feedback with value of -2.2. The $\alpha$ parameter measurement result shows the similar result as the method in \autoref{subsec:measurement_with_LCA}, with which we can confirm the $\alpha$ parameter under feedback conditions can be decreased.
+By measuring the power in the carrier and the sidebands from the optical spectrum the paratmeter $p$ can be obtained, the value of $m$ can be obtained from the instanteneous power signal, therefore $\alpha$ parameter is characterized \cite{harder1983measurement, villafranca2007precise}.
+
+The $\alpha$ parameter measurement results are shown in \autoref{fig:Alpha_Cleaved_and_Lensed}. Lower $\alpha$ value is achieved for laser with feedback with value of -1.208 compare to the without feedback with value of -2.36. For laser with feedback the $\alpha$ parameter value ranges from -4.581 to -1.208 where as for laser without feedback it is from -4.944 to -2.36. It shows a similar result as the method in \autoref{subsec:measurement_with_LCA}, with which we can confirm the $\alpha$ parameter under feedback conditions is decreased.
 % The experimental arrangement for measuring the intensity and phase modulation index is shown in Fig. 1. The semiconductor laser is biased above threshold and a small sinusoidally varying current at frequency $\Omega$ is superimposed. The intensity and spectral density of the radiation field are given by [Harder, Vahala et al 1983]
 % \begin{equation}
 %     Intensity: E_0^2[1+mcos(\Omega t)]
@@ -490,7 +503,7 @@ By measuring the power in the carrier and the sidebands from the optical spectru
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/Alpha_Cleaved_and_Lensed.png}
-    \caption{(a) Measurement with cleaved fiber with oil, the light grey squares are correspoinding to the unstable points mentioned before, (b) measurement with lensed fiber, lower $alpha$ parameter value is achieved.}
+    \caption{(a) Measurement with cleaved fiber with oil, the light grey squares are correspoinding to the unstable points mentioned before, (b) measurement with lensed fiber, lower $\alpha$ parameter value is achieved.}
     \label{fig:Alpha_Cleaved_and_Lensed}
 \end{figure}
 

@@ -2037,12 +2037,13 @@
     <bcf:citekey order="33">devaux1993simple</bcf:citekey>
     <bcf:citekey order="34">devaux1993simple</bcf:citekey>
     <bcf:citekey order="35">devaux1993simple</bcf:citekey>
-    <bcf:citekey order="36">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="36">srinivasan1995using</bcf:citekey>
     <bcf:citekey order="37">harder1983measurement</bcf:citekey>
-    <bcf:citekey order="38">bjerkan1996measurement</bcf:citekey>
-    <bcf:citekey order="39">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="38">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="39">bjerkan1996measurement</bcf:citekey>
     <bcf:citekey order="40">harder1983measurement</bcf:citekey>
-    <bcf:citekey order="40">villafranca2007precise</bcf:citekey>
+    <bcf:citekey order="41">harder1983measurement</bcf:citekey>
+    <bcf:citekey order="41">villafranca2007precise</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
