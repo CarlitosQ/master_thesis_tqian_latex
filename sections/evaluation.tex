@@ -1,6 +1,6 @@
 \chapter{Tunable Laser with on Chip Controllable Feedback}\label{ch:laser_with_on_chip_feedback}
-\section{Design}\label{sec:design}
-The design of the on chip controllable feedback is targeting to the region I (phase dependent linewidth reduction) and region V (strong feedback with coumpound cavity mode) in the studied five feedabck regions \cite{} by ustilization of the Bragg grating, Multimode Interferometer (MMI), Variable Optical Attenuator (VOA) and Thin Film Filter (TFF) structures on our Polyboard platform. 
+\section{Design and Characterization}\label{sec:design_and_characterization}
+The design of the on chip controllable feedback is targeting to the weak feedback region with phase dependent linewidth reduction and strong feedback region with coumpound cavity mode by ustilization of the Bragg grating, Multimode Interferometer (MMI), Variable Optical Attenuator (VOA) and Thin Film Filter (TFF) structures on our Polyboard platform. Design principle and the characterization of the chips are shown in the following sections.
 % \begin{figure}[ht]
 %     \centering
 %     \includegraphics[width=10cm]{figures/feedback_region.PNG}
@@ -24,30 +24,13 @@ The grating is designed to have its Bragg wavelength at $\lambda_B=1550 \ nm$.  
     \label{fig:VOA_18321}
 \end{figure}
 
-\subsection{Long Feedback Cavity} \label{subsec:long_feedback_cavity}
-The on-chip long feedback cavity design is achieved by the spiral structure with the bending radius of $1500 \ \mu m$. The beginning of the chip is our normal tunable laser, followed by a $1\times 2$ MMI to seperate the output port and the external cavity. In the external cavity, two VOA structures and a phase section is included. The spiral structure has a variable design to achieve external cavity length of [39.28, 55.70, 81.33, 86.53, 100.75, 157.35] $\ mm$. By using \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} 
-The chip design and the example of grating characterization is shown in \autoref{fig:grating_5742}. The appearing of the ripples in the reflection curves indicates the existing of the reflection besides the grating. We checked the spacing of the ripple is corresponding to the distance between the MMI and the output port. Ripples in transmission curves were not observed may because the attenuation inside the polymer waveguide after the spiral structure is relative high so that the reflected from the TFF slot got attenuated.
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics[width=0.6\linewidth]{figures/5742_spiral.png}
-%     \caption{}
-%     \label{fig:5742_spiral}
-% \end{figure}
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\linewidth]{figures/grating_5742.png}
-    \caption{(a) Chip design of the laser with long external cavity controllable feedback, (b) Grating characterization of the device, the spacing of the ripples in the reflection (red and green) curves are corresponding to the distance between MMI and output port.}
-    \label{fig:grating_5742}
-\end{figure}
-
 \subsection{Short Feedback Cavity} \label{subsec:short_feedback_cavity}
-The on-chip short feedback cavity follows the same design principle as in \autoref{subsec:long_feedback_cavity}, the chip design and the example of grating characterization is shown in \autoref{fig:grating_6559}. In order to exploit PPR, \autoref{eq:mode_spacing} is used to set the ideal cavity length. External cavity length of [3129.76, 3589,76, 3859.76, 4159.76, 4869.76, 5309.76, 6359.76] $\mu m$ are choosen according to the FSR plot shown in \autoref{fig:design_FSR}. Besides the similliar ripples in the reflection curves as in \autoref{fig:grating_5742}, reflection is also observed in the transmission curves, with the spacing corresponding to the external cavity, which indicates the reflection from the TFF slot is relatively high in this case.
+The on-chip short feedback cavity design is achieved by an additional waveguide and a TFF slot after the normal tunable laser, followed by a $1\times 2$ MMI to seperate the output port and the external cavity. In the external cavity, VOA and phase section are included. The chip design and the example of grating characterization is shown in \autoref{fig:grating_6559}. In order to exploit PPR, \autoref{eq:mode_spacing} is used to set the ideal cavity length. External cavity length of [3129.76, 3589,76, 3859.76, 4159.76, 4869.76, 5309.76, 6359.76] $\mu m$ are choosen according to the FSR plot shown in \autoref{fig:design_FSR}. The appearing of the ripples in the transmission and reflection curves indicates the existing of the strong reflection along with the grating. We calculated the spacing is corresponding to the external cavity and the distance between the MMI and the output port respectively, which indicates the reflection from the TFF slot is relatively high in this case.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.6\linewidth]{figures/design_FSR.png}
-    \caption{FSR versus different external cavity length, the red circle markers are corresponding to the FSR of [22, 20, 19, 18, 16, 15, 13] $GHz$.}
+    \includegraphics[width=.55\linewidth]{figures/design_FSR.png}
+    \caption{FSR versus different external cavity length, the red circle markers are corresponding to the FSR of [21.7, 19.8, 18.8, 17.8, 15.9, 14.9, 12.9] $GHz$.}
     \label{fig:design_FSR}
 \end{figure}
 
@@ -58,46 +41,76 @@ The on-chip short feedback cavity follows the same design principle as in \autor
     \label{fig:grating_6559}
 \end{figure}
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/6559_short.png}
+    \caption{Chip design of the laser with short external cavity controllable feedback.}
+    \label{fig:grating_6559}
+\end{figure}
 
-\section{Characterization}
 
 % The parameter $F$ strongly depends on the phase of the externally reflected light $\phi_{ext}$ a very careful control of $\phi_{ext}$ is required for achieving a certain linewidth narrowing
 
-Bandwidth enhancement by PPR is achieved with the short external cavity design. As shown in \autoref{fig:spectra_and_bandwidth_6559}, the appearing of the second resonance peak in the frequency response is clearly different from the ones we achieved in \autoref{fig:undamped_RO}.
+Bandwidth enhancement by PPR is achieved with this short external cavity design. As shown in \autoref{fig:spectra_and_bandwidth_6559}, the appearing of the second resonance peak in the frequency response is clearly different from the ones we achieved in \autoref{fig:undamped_RO}. The mode spcing of $15.2 \ GHz$ is correspoing to the external cavity design of $4869.76 \ \mu m$ with FSR of $15.9 \ GHz$, the appearing of PPR with value of $14.8 \ GHz$ is slightly lower than the FSR value but in the same order. By tuning the phase section in the external cavity, the side mode shifts to the main mode and the PPR mode also moves toward the first peak which is CPR. Further tuning the phase section with the mode spacing close to the self mode locking range, the undamped RO starts to dominate and finally breaks the stable lasing condition.
 
-\begin{figure}[!htb]
+The best achieved bandwidth value of $f_{3dB}=13.2 \ GHz$ with PPR is shown in \autoref{fig:spectra_and_bandwidth_6557}, with the external cavity length of $6359.76 \ \mu m$ and the designed FSR of $12.9 \ GHz$. The mode spacing between the main mode and the side mode is $11.5 \ GHz$ and the PPR is appearing at $11.6 \ GHz$ in the frequency response.
+
+\begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{figures/spectra_and_bandwidth_6559.png}
     \caption{}
     \label{fig:spectra_and_bandwidth_6559}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/spectrum_and_bandwidth_6557.png}
-    \caption{}
+    \caption{The best achieved bandwidth value of $f_{3dB}=13.2 \ GHz$ with PPR. The external cavity length is $6359.76 \ \mu m$ corresponds to the FSR value of $12.9 \ GHz$. The mode spacing between the main mode and the side mode is $11.5 \ GHz$ and the PPR is appearing at $11.6 \ GHz$ in the frequency response.}
     \label{fig:spectra_and_bandwidth_6557}
 \end{figure}
 
-\begin{figure}[!htb]
+Chirp reduction is also observed by tuning the phase section in the external cavity, which is shown in \autoref{fig:chirp_6559} and \autoref{tab:chirp_6559}. Tuning the phase current from $10 \ mA$ to $14 \ mA$ we observed the increase of the Note that the current value in \autoref{tab:chirp_6559} is not exactly corresponding to the value in \autoref{fig:chirp_6559} because of the existance of the hysteresis.
+
+\begin{figure}[ht]
     \centering
     \includegraphics[width=.7\linewidth]{figures/chirp_6559.png}
     \caption{}
     \label{fig:chirp_6559}
 \end{figure}
 
-\begin{table}[!htb]
+\begin{table}[ht]
     \centering
     \caption{My caption}
-    \label{my-label}
+    \label{tab:chirp_6559}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llllll@{}}
     \toprule
-    \multirow{2}{*}{Current {[}mA{]}} & \multicolumn{5}{c}{$\alpha$}                                                                                \\ \cmidrule(l){2-6} 
+    \multirow{2}{*}{$I_{gain} \ [mA]$} & \multicolumn{5}{c}{$\alpha$}                                                                                \\ \cmidrule(l){2-6} 
                                       & $I_{phase}=10 \ mA$ & $I_{phase}=11 \ mA$ & $I_{phase}=12 \ mA$ & $I_{phase}=13 \ mA$ & $I_{phase}=14 \ mA$ \\ \midrule
     75                                & 1.725               & 2.063               & 2.22                & 2.624               & 3.247               \\
     75                                & 1.818               & 1.991               & 2.296               & 2.618               & 3.257               \\
     75                                & 1.818               & 2.07                & 2.246               & 2.614               & 3.253               \\
     75                                & 1.808               & 2.054               & 2.242               & 2.566               & 3.221               \\ \midrule
     Average                           & 1.79225             & 2.0445              & 2.251               & 2.6055              & 3.2445              \\ \bottomrule
-    \end{tabular}
+    \end{tabular}%
+    }
 \end{table}
+
+\subsection{Long Feedback Cavity} \label{subsec:long_feedback_cavity}
+The on-chip long feedback cavity design is achieved by the spiral structure with the bending radius of $1500 \ \mu m$, it follows the same design principle as in \autoref{subsec:short_feedback_cavity}. The spiral structure has a variable design to achieve external cavity length of [39.28, 55.70, 81.33, 86.53, 100.75, 157.35] $\ mm$ by using \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback}.
+
+The chip design and the example of grating characterization is shown in \autoref{fig:grating_5742}. Similliar ripples were observed in the reflection curves but not in the transmission curves, it may because the attenuation inside the polymer waveguide after the spiral structure is relative high so that the reflected from the TFF slot got attenuated.
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{figures/5742_spiral.png}
+%     \caption{}
+%     \label{fig:5742_spiral}
+% \end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/grating_5742.png}
+    \caption{(a) Chip design of the laser with long external cavity controllable feedback, (b) grating characterization of the device, the spacing of the ripples in the reflection (red and green) curves are corresponding to the distance between MMI and output port.}
+    \label{fig:grating_5742}
+\end{figure}
+
