@@ -2,7 +2,7 @@
 In this chapter, the modelling of external feedback in the hybrid polymer-based DBR laser considered in this work, is presented. This model is set as a starting point to discuss the effects of optical feedback with regards to linewidth, modulation bandwidth and chirp.
 
 \section{Model of External Optical Feedback in a Polymer-based DBR Laser}\label{sec:model_laser}
-The effect of the external feedback in semiconductor lasers is defined by parameters of feedback coefficent $C$, coupling coefficient $\kappa_{ext}$ and chirp reduction factor $F$ \cite{kazarinov1987relation, petermann2012laser}. They are extracted by a three-mirror laser model and its equivalent two-mirror Fabry-Perot cavity as shown in \autoref{fig:laser_cavity_model} in order to correctly consider the feedabck effect in the polymer-based tunable DBR laser.
+The effect of the external feedback in semiconductor lasers is defined by parameters of feedback coefficent $C$, coupling coefficient $\kappa_{ext}$ and chirp reduction factor $F$ \cite{kazarinov1987relation, petermann2012laser}. They are extracted by a three-mirror laser model and its equivalent two-mirror Fabry-Perot cavity as shown in \autoref{fig:laser_cavity_model} in order to correctly consider the feedback effect in the polymer-based tunable DBR laser.
 
 \begin{figure}[ht]
     \centering
@@ -11,7 +11,7 @@ The effect of the external feedback in semiconductor lasers is defined by parame
     \label{fig:laser_cavity_model}
 \end{figure}
 
-The InP gain section in \autoref{fig:laser_cavity_model} possesses a length of $L_{gain}$ and comprises a High Reflection (HR) coating with reflectance $r_1$ at one of its facets and an Anti-Reflection (AR) coating against polymer at the other facet. The polymer part consists a phase and a grating section with a total length of $L_{poly}$ and the external feedback section with a length of $L_{ext}$ after the grating. $r_1$, $r_{grating}$ and $r_{ext}$ are amplitude reflectance of the gain chip front facet, grating and external reflector respectively.
+The InP gain section in \autoref{fig:laser_cavity_model} possesses a length of $L_{gain}$ and comprises a High Reflection (HR) coating with reflectance $r_1$ at one of its facets and an Anti-Reflection (AR) coating against polymer at the other facet. The polymer part consists a phase and a grating section with a total length of $L_{poly}$ and the external feedback section with a length of $L_{ext}$ after the grating. $r_1$, $r_{grating}$ and $r_{ext}$ are amplitude reflectance of the gain section front facet, grating and external reflector respectively.
 
 There are two ways to describe the feedback effect by the chirp reduction factor $F$, first one is mainly concerning the feedback coefficent $C$ parameter, which characterizes the level of feedback in relation to how it affects the mode behavior of the laser and is defined as \cite{petermann2012laser}
 \begin{equation}
@@ -23,7 +23,7 @@ with
     \kappa_{ext}=\frac{r_{ext}}{r_{grating}}\qty(1-\abs{r_{grating}}^2)
     \label{eq:kappa_ext}
 \end{equation}
-where $\tau=2nL/c$ is the roud-trip time in the corresponding section, $\kappa_{ext}$ is the coupling coefficient from the grating reflector to the external cavity, and $\alpha$ is the linewidth enhancement factor \cite{henry1982theory}. Note that here the grating reflectivity $r_{grating}$ is considered as a constant value, which leads to effective grating length $L_{eff}=tanh(\kappa L_{grating})/2\kappa$ shorter than the real grating length $L_{grating}$ \cite{kuznetsov1988theory}. The $L_{eff}$ is then contained in the laser cavity and the rest of the grating is included in the external feedback section.
+where $\tau=2nL/c$ is the roud-trip time in the corresponding section, $\kappa_{ext}$ is the coupling coefficient from the grating reflector to the external cavity, and $\alpha$ is the linewidth enhancement factor \cite{henry1982theory}. Note that here the grating reflectivity $r_{grating}$ is considered as a constant value as shown in \autoref{fig:L_grating_eff}, which leads to effective grating length $L_{eff}=tanh(\kappa L_{grating})/2\kappa$ shorter than the real grating length $L_{grating}$ \cite{kuznetsov1988theory}. The $L_{eff}$ is then contained in the laser cavity and the rest of the grating is included in the external feedback section.
 
 \begin{figure}[ht]
     \centering
@@ -88,19 +88,40 @@ with
     B=\frac{\alpha}{\tau_{gain}}\qty(\dv{\omega}\ln{r_{eff}(\omega)})
     \label{eq:F_factor_B}
 \end{equation}
-where $\alpha$ is the linewidth enhancement factor \cite{henry1982theory}, the parameter $A$ is related to the freqeuncy derivative of the phase $\varphi_{eff}(\omega)$ in \autoref{eq:effective_reflectivity}, which denotes the ratio of the external cavity path length to the gain section path length. It can be interperated as the ratio of the photon numbers outside to inside the gain medium, which remains nearly constant once the laser cavity is formed \cite{choi2015evaluation}. By designing a cavity with a long external cavity, a large $A$ can be achieved. On the other hand, the parameter $B$ accounts for the wavelength dependence of the spectral reflectivity. It is changed if the lasing mode is detuned away from the Bragg wavelength under detuned loading conditions \cite{} which will be discussed further in \autoref{sec:bandwidth_enhancement}. Additional reduction occurs only at the rising slope of the grating response which generates a positive $B$ value.
+where $\alpha$ is the linewidth enhancement factor \cite{henry1982theory}, the parameter $A$ is related to the freqeuncy derivative of the phase $\varphi_{eff}(\omega)$ in \autoref{eq:effective_reflectivity}, which denotes the ratio of the external cavity path length to the gain section path length. It can be interperated as the ratio of the photon numbers outside to inside the gain medium, which remains nearly constant once the laser cavity is formed \cite{choi2015evaluation}. By designing a cavity with a long external cavity, a large $A$ can be achieved. On the other hand, the parameter $B$ accounts for the wavelength dependence of the spectral reflectivity. It is changed if the lasing mode is detuned away from the Bragg wavelength under detuned loading conditions \cite{feiste1998optimization, kjebon1997two, chacinski2010impact} which will be discussed further in \autoref{sec:bandwidth_enhancement}. Additional reduction occurs only at the rising slope of the grating response which generates a positive $B$ value.
 
-\section{Linewidth and Chirp Reduction}\label{sec:linewidth_and_chirp_reduction}
-Linewidth and chirp reduction for laser coupled with a passive cavity is related to $F$ and is defined as \cite{kazarinov1987relation, petermann2012laser}
+
+\section{Chirp Reduction}\label{sec:chirp_reduction}
+Light chirping can be defined as the instantaneous change of the central wavelength or optical frequency in response to variations in the optical power \cite{villafranca2007precise}. Two main contributions of the frequency chirp are distinguished, one is an adiabatic chirp, producing a frequency shift proportional to the instantaneous optical power, and is defined by parameter $\alpha_{adiabatic}$, which is associated to the nonlinear gain \cite{villafranca2007precise, harder1983measurement}. Another one is a transient chirp component that evolve with the time deriative of the optical power, and is defined by $\alpha_{transient}$, normally named as linewidth enhancement factor \cite{henry1982theory} and dominates when dealing with semiconductor lasers \cite{choi2015evaluation}. 
+% Here only the transient chirp $\alpha$ is considered and is defined as \cite{henry1982theory, soriano2013complex}
+% \begin{equation}
+%     \alpha=-\frac{\dv*{\chi_r(n)}{n}}{\dv*{\chi_i(n)}{n}}
+% \end{equation}
+% with $\chi_r$ and $\chi_i$ are the real and imaginary parts of the carrier-dependent susceptibility of the semiconductor material.
+
+% Since the linewidth enhancement factor $\alpha$ is highly phase dependent, two measurement methods are performed to get the right characterization for DBR laser with feedback.
+
+% i.e. a residual frequency modulation of an amplitude modulated optical wave
+% the $\alpha$ parameter is defined as 
+
+The chirp reduction for laser coupled with a passive cavity is related to $F$ and is defined as \cite{choi2015evaluation,kazarinov1987relation, petermann2012laser}
 \begin{equation}
-    \Delta\omega=\frac{\Delta\omega_0}{F}
-    \label{eq:chirp_reduction}
+    \alpha_{adiabatic}\approx\frac{\alpha}{1+A+B}
+    \label{eq:chirp_reduction_adiabatic}
 \end{equation}
+\begin{equation}
+    \alpha_{transient}\approx\frac{\alpha(1+A-B/\alpha^2)}{1+A+B}.
+    \label{eq:chirp_reduction_transient}
+\end{equation}
+Note that adiabatic chirp is usually frequency-independent and dominant at low modulation frequency, but for the semiconductor laser operating at large modulation frequency over $10 \ Gb/s$, it is sufficient to consider only the transient chirp \cite{choi2015evaluation}, which will be the one discussed in this thesis. 
+
+\section{Linewidth and Chirp Reduction}\label{sec:linewidth_reduction}
+Linewidth reduction for laser coupled with a passive cavity is related to $F$ and is defined as \cite{kazarinov1987relation, petermann2012laser}
 \begin{equation}
     \Delta\nu=\frac{\Delta\nu_0}{F^2}
     \label{eq:linewidth_reduction}
 \end{equation}
-where $\Delta\omega$, $\Delta\nu$ and $\Delta\omega_0$, $\Delta\nu_0$ are the chirp and linewidth with and without feedabck respectively. 
+where $\Delta\nu$ and $\Delta\nu_0$ are the linewidth with and without feedback respectively. 
 
 For the weak feedback case, \autoref{eq:F_weak_feedback} shows that the linewidth can either be narrowed $\Delta\nu_0/(1+C)^2$ or broadened $\Delta\nu_0/(1-C)^2$ depending on the feedback phase. Apart from that, \autoref{eq:F_factor} shows further linewidth reduction can be achieved by considering the wavelength dependence of the spectral reflectivity introduced with parameter $B$.
 % If $\Delta\omega_0$ is denoted as the adiabatic chirp in the absence of feedback, then the chirp with external cavity $\Delta\omega$ is obtained as \cite{kazarinov1987relation}
@@ -114,7 +135,7 @@ For the weak feedback case, \autoref{eq:F_weak_feedback} shows that the linewidt
 %     \label{eq:linewidth_reduction}
 % \end{equation}
 
-With \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} the linewidth reduction factor $F^2$ versus the external cavity length can be calculated and is shown in \autoref{fig:F_reduction_factor}. Vertical dashed line $L_c$ indicates the start of the possible unstable lasing condition where the $C$ parameter reaches 1. \autoref{fig:F_reduction_factor} is caculated under the assumption that the feedback comes from the output waveguide facet, which is formed by a polymer/air interface and leads to $R_{ext}=0.035$. The parameters used for calculation is shown in \autoref{tab:F_reduction_factor}.
+With \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} the linewidth reduction factor $F^2$ versus the external cavity length can be calculated and is shown in \autoref{fig:F_reduction_factor}. Vertical dashed line $L_c$ indicates more modes may starts to appear where the $C$ parameter reaches 1 \cite{petermann2012laser}. \autoref{fig:F_reduction_factor} is caculated under the assumption that the feedback comes from the output waveguide facet, which is formed by a polymer/air interface and leads to $R_{ext}=0.035$. The parameters used for calculation is shown in \autoref{tab:F_reduction_factor}.
 
 \begin{table}[ht]
     \centering
@@ -125,6 +146,7 @@ With \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} the linewid
     $L_{gain}$    & Active section length        & 300 $\mu m$     \\
     $L_{phase}$   & Phase section length         & 525 $\mu m$     \\
     $L_{grating}$ & Grating section length       & 699.84 $\mu m$  \\
+    $n_{gain}$    & Active section refractive index  & 3.2         \\
     $n_{poly}$    & Polymer refractive index     & 1.46            \\
     $\alpha$      & Linewidth redcution factor   & -3              \\
     $R_{grating}$ & Grating reflectivity         & 0.3             \\
@@ -136,7 +158,7 @@ With \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} the linewid
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.7\linewidth]{figures/F_reduction_factor.png}
-    \caption{Calculated linewidth reduction factor $F^2$ assuming the feedback comes from the polymer/air interface. Dashed vertical line $L_c$ indicates the length where the $C$ parameter reaches 1 and unstable laser behavior is expected.}
+    \caption{Calculated linewidth reduction factor $F^2$ assuming the feedback comes from the polymer/air interface. Dashed vertical line $L_c$ indicates the length where the $C$ parameter reaches 1 and more modes start to appear.}
     \label{fig:F_reduction_factor}
 \end{figure}
 
@@ -144,7 +166,7 @@ With \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback} the linewid
 The maximum bit rate achieved by direct modulated lasers is typically limited by the well known resonance between carriers and photons, which is usually named as the carrier-photon resonance or the relaxation oscillation \cite{coldren2012diode}. Three approaches to achieve broader bandwidth are explored in detail here. 
 
 \subsection{Detuned Loading Condition}\label{subsec:detuned_loading}
-The first mechanism used to extend the modulation bandwidth of a semiconductor laser is the detuned loading effect, which is due to the frequency dependence of the reflection coefficient introduced by a distributed mirror (e.g. DBR \cite{feiste1998optimization, kjebon1997two, chacinski2010impact}) without any external feedback. 
+The first mechanism used to extend the modulation bandwidth of a semiconductor laser is the detuned loading effect, which is due to the frequency dependence of the reflection coefficient introduced by a distributed mirror (e.g. DBR \cite{feiste1998optimization, kjebon1997two, chacinski2010impact}). It can be achieved without any external feedback. 
 
 The operation principle of the detuned loading condition can be illustrated by the calculated round-trip gain $G$ curve, which is based on the effective laser cavity model presented in \autoref{sec:model_laser} and is definied as \cite{petermann2012laser, vallone2011enhanced}
 \begin{equation}
@@ -163,7 +185,7 @@ where the real part $\beta=2\pi n_{gain}/\lambda$ is the propagration constant i
 \end{equation}
 these two conditions allow to numerically find the lasing mode wavelength $\lambda_m$.
 
-Paramters given in \autoref{tab:detuned_loading} were used to calculate the round-trip gain in a DBR laser cavity without feedback and the result is shown in \autoref{fig:detuned_loading_principle}.
+Parameters given in \autoref{tab:detuned_loading} were used to calculate the round-trip gain in a DBR laser cavity without feedback and the result is shown in \autoref{fig:detuned_loading_principle}.
 
 \begin{table}[ht]
     \centering
@@ -176,6 +198,7 @@ Paramters given in \autoref{tab:detuned_loading} were used to calculate the roun
     $L_{phase}$   & Phase section length                & $525 \ \mu m$    \\
     $L_{grating}$ & Grating section length              & $700.644\ \mu m$ \\
     $\kappa$      & Grating coupling coefficient        & 9.80 $cm^{-1}$   \\
+    $n_{gain}$      & Active section refractive index  & 3.2               \\
     $n_{poly}$    & Polymer refractive index            & 1.46             \\
     $r_1$         & Gain section  reflectivity          & 0.99             \\ \bottomrule
     \end{tabular}
@@ -224,7 +247,7 @@ where $f_r$ and $\gamma_r$ are the frequency and the damping rate of the relaxat
 \subsection{Feedback Introduced Detuned Loading}\label{subsec:feedback_introduced_detuned_loading}
 Feedback introduced by a passive cavity can also contribute to the detuned loading effect \cite{vahala1984detuned, vahala1985observation}, it alters the frequency response of the effective reflector $r_{eff}(\omega)$ so that different $A$ and $B$ parmaerters can be utilised to further enhance the bandwidth. It has been reported that relaxation oscillation frequency $f_r$ can be nearly doubled for external resonator lasers with an appropriate choice of the parameters $A$ and $B$ \cite{ vahala1984detuned, agrawal1988modulation, vahala1985observation}. Feedback altered round-trip gain for such laser can be illustrated by using previously defined $r_{eff}(\omega)$ in \autoref{eq:effective_reflectivity} and round-trip gain condition in \autoref{eq:lasing_condition}.
 
-Paramters given in \autoref{tab:detuned_loading_feedback} were used to calculate the round-trip gain in a DBR laser cavity with external feedback coming from the output waveguide facet, which is formed by a polymer/air interface, the result is shown in \autoref{fig:feedback_introduced_detuned_loading_principle}.
+Parameters given in \autoref{tab:detuned_loading_feedback} were used to calculate the round-trip gain in a DBR laser cavity with external feedback coming from the output waveguide facet, which is formed by a polymer/air interface, the result is shown in \autoref{fig:feedback_introduced_detuned_loading_principle}.
 
 \begin{table}[ht]
     \centering
@@ -238,9 +261,10 @@ Paramters given in \autoref{tab:detuned_loading_feedback} were used to calculate
     $L_{grating}$   & Grating section length           & $700.644\ \mu m$  \\
     $L_{ext}$       & External feedback section length & $1473.363\ \mu m$ \\
     $\kappa$        & Grating coupling coefficient     & $9.80 \ cm^{-1}$  \\
+    $n_{gain}$      & Active section refractive index  & 3.2               \\
     $n_{poly}$      & Polymer refractive index         & 1.46              \\
-    $R_1$           & Gain section reflectivity        & 0.99              \\
-    $R_{ext}$       & External reflector reflectivity  & 0.035             \\ \bottomrule
+    $r_1$           & Gain section reflectivity        & 0.99              \\
+    $r_{ext}$       & External reflector reflectivity  & 0.187             \\ \bottomrule
     \end{tabular}
 \end{table}
 
@@ -268,7 +292,7 @@ Another approach used to extend the bandwidth takes advantage of the interaction
 
 The occurence of the adjacent cavity mode has been observed to be closely related to the behavior of the cavity Round-Trip Phase (RTP) function \cite{reithmaier2005modulation}, which refers to the phase factor $\varphi(\omega)$ in \autoref{eq:RTG_RTP}. Calculation for a simplified DBR laser structure is done to illustrate the operation principle of the PPR. By assuming the DBR laser only contains a gain section and grating as in \cite{montrosset2014laser}. Parameters used for this calculation are shown in \autoref{tab:PP_resonance_operation_principle}.
 
-The caculated result is shown in \autoref{fig:PP_resonance_operation_principle},where $f_0$, $f_1$ and $f_B$ denote the frequency of the lasing mode, PPR mode and the freqeuncy corresponding to the Bragg wavelength. The most favorable operation condition is when the lasing mode at $f_0$ operates in the detuned loaidng condition $f_0<f_B$, and a mode with frequency $f_1$ on the same side with respect to the Bragg wavelength is placed on the the longer wavelength side of the Round Trip Gain (RTG) curve. In this mode configuration, the PPR effect can arise due to the coupling between the lasing mode and its adjacent mode \cite{montrosset2014laser}, the corresponding PPR frequency is then the difference between these two modes. In order to generate an adjacent longitudinal cavity mode under feedback, a strong feedback condition is required \cite{}, which will form compound cavity modes with the Free Spectral Range (FSR) of the whole cavity considering the laser cavity plus the external feedback section as defined in \autoref{eq:mode_spacing_FSR} \cite{coldren2012diode}
+The caculated result is shown in \autoref{fig:PP_resonance_operation_principle},where $f_0$, $f_1$ and $f_B$ denote the frequency of the lasing mode, PPR mode and the freqeuncy corresponding to the Bragg wavelength. The most favorable operation condition is when the lasing mode at $f_0$ operates in the detuned loaidng condition $f_0<f_B$, and a mode with frequency $f_1$ on the same side with respect to the Bragg wavelength is placed on the the longer wavelength side of the Round Trip Gain (RTG) curve. In this mode configuration, the PPR effect can arise due to the coupling between the lasing mode and its adjacent mode \cite{montrosset2014laser}, the corresponding PPR frequency is then the difference between these two modes. In order to generate an adjacent longitudinal cavity mode under feedback, a strong feedback condition is required \cite{mieda2016ultra,ahmed2013enhancing, morthier2000extended,bornholdt200840}, which will form compound cavity modes with the Free Spectral Range (FSR) of the whole cavity considering the laser cavity plus the external feedback section as defined in \autoref{eq:mode_spacing_FSR} \cite{coldren2012diode}
 \begin{equation}
     \Delta\nu=\frac{c}{2\qty(n_{gain}L_{gain}+n_{poly}\qty(L_{phase}+L_{grating}+L_{ext}))}
     \label{eq:mode_spacing_FSR}
@@ -320,18 +344,18 @@ With the effect of feedback, modes formed in the external feedback section betwe
 \end{equation}
 where $L_{poly}$ and $L_{ext}$ follow the definition in \autoref{sec:model_laser}.
 
-By tuning the phase through the increasing current it shifts the laser cavity modes towards the shorter wavelength side, this effect is achieved by change of the effective refractive index inside the polymer waveguide which in turn changes the effecitve optical length of the cavity. The mode have the lowest cavity loss (highest intensiy) overlaping with the grating response will become the lasing mode.
-
-The principle of wavelength tuning achieved by tuning the phase is presented in \autoref{fig:cavity_modes_and_ext_modes_model}, where the red and green curves represent the laser cavity mode and the mode in the external feedback section, and the blue curve is the grating response. 
+The spacing betwee the laser cavity mode and the mode formed in the external feedback section will change by tuning the phase through the increasing current, which in turn shifts the laser cavity modes towards the shorter wavelength side. The mode have the lowest cavity loss (highest intensiy) overlaping with the grating response will become the lasing mode. The principle of wavelength tuning is presented in \autoref{fig:cavity_modes_and_ext_modes_model}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.7\linewidth]{figures/cavity_modes_and_ext_modes_model.png}
-    \caption{Principle of phase tuning in tunable DBR laser. Red and green curves represent the mode of the laser cavity and external feedback section respectively. The different intensity considers that the feedback power is less than the output power. $\lambda_0$ is the lasing mode, $\lambda_{-1}$ and $\lambda_{1}$ are its adjacent modes. $\lambda_B$ is the Bragg wavelength which indicates the center of the grating response. $\Delta\lambda_{cavity}$ and $\Delta\lambda_{ext}$ are the mode spacing of the laser cavity and the external feedback section. The red arrow indicates the phase shifts the cavity modes toward the shorter wavelength through the increasing phase current. }
+    \caption{Principle of phase tuning in tunable DBR laser. Red and green curves represent the mode of the laser cavity and external feedback section respectively, and the blue curve is the grating response. }
     \label{fig:cavity_modes_and_ext_modes_model}
 \end{figure}
 
-Examing the lasing spectrum for laser with feedabck was done by measuring the central wavelength and Side-Mode-Suppression-Ratio (SMSR) simultaneously and then compared with the same measurement for laser without feedback. The measurements were done by fixing the gain section current at $I_{gain}=80 \ mA$, grating section current at $I_{grating}=15 \ mA$ and scanning the phase section from $4.5 \ mA$ to $30 \ mA$ with the step of $0.5 \ mA$, the results are shown in \autoref{fig:OSA_and_SMSR} and examples of spetra are shown in \autoref{fig:spectra_lensed_4621}. 
+The red and green curves in \autoref{fig:cavity_modes_and_ext_modes_model} represent the laser cavity mode and the mode in the external feedback section, and the blue curve is the grating response. The different intensity considers that the feedback power is less than the output power. $\lambda_0$ is the lasing mode, $\lambda_{-1}$ and $\lambda_{1}$ are its adjacent modes. $\lambda_B$ is the Bragg wavelength which indicates the center of the grating response. $\Delta\lambda_{cavity}$ and $\Delta\lambda_{ext}$ are the mode spacing of the laser cavity and the external feedback section. The red arrow indicates the phase shifts the cavity modes toward the shorter wavelength through the increasing phase current. Besides the lasing mode, the interaction between the laser cavity mode and the mode formed in the external cavity is expected to appear at the grating side bands which will alter the lasing spectrum.
+
+Examing the lasing spectrum for laser with feedback was done by measuring the central wavelength and Side-Mode-Suppression-Ratio (SMSR) simultaneously and then compared with the same measurement for laser without feedback. The measurements were done by fixing the gain section current at $I_{gain}=80 \ mA$, grating section current at $I_{grating}=15 \ mA$ and scanning the phase section from $4.5 \ mA$ to $30 \ mA$ with the step of $0.5 \ mA$, the results are shown in \autoref{fig:OSA_and_SMSR} and examples of spetra are shown in \autoref{fig:spectra_lensed_4621}. 
 % Due to the hysteresis effect the laser wavelength has a little shift under these two configurations, e.g. the mode hopping point in \autoref{fig:OSA_and_SMSR} a) appears at index 51 and the corresponding point in \autoref{fig:OSA_and_SMSR} (b) is at index 48.
 
 \begin{figure}[ht]
@@ -341,27 +365,18 @@ Examing the lasing spectrum for laser with feedabck was done by measuring the ce
     \label{fig:OSA_and_SMSR}
 \end{figure}
 
-
-
-
-
-
-
-% and the observed spectra are shown in \autoref{fig:cavity_modes_and_ext_modes_model} and \autoref{fig:spectra_lensed_4621}. 
-
-The scanning of the spectra and the examing of the Side Mode Suppression Ratio (SMSR) are 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/spectra_lensed_4621.png}
-    \caption{Example of observed spectra for different phase current (index). (a) Green dashed line indicates the mode spacing between the main mode and the first side mode on the right, which corresponds to the laser cavity mode spacing $\Delta\nu_{ext}=56.35 \ GHz$, black dashed line indicates the mode spacing correspoinds to the external feedback section $\Delta\nu_{cavity}=67.04 \ GHz$, (b) occurence of the self-modulation peaks on both sides of the main mode are pointed with black arrows.}
+    \caption{Example of observed spectra for different phase current. (a) Green dashed line indicates the mode spacing between the main mode and the first side mode on the right, which corresponds to the laser cavity mode spacing $\Delta\nu_{ext}=56.35 \ GHz$, black dashed line indicates the mode spacing correspoinds to the external feedback section $\Delta\nu_{cavity}=67.04 \ GHz$, (b) occurence of the self-modulation peaks on both sides of the main mode are pointed with black arrows.}
     \label{fig:spectra_lensed_4621}
 \end{figure}
 
-Compare to the wavelength shifting behavior for laser without feedback in \autoref{fig:OSA_and_SMSR} (a), additional hopping behavior in \autoref{fig:OSA_and_SMSR} (b) appears due to the feedback effect, self-modulation peaks were observed appearing in the spectra. Regarding to the cavity mode shifting behavior, the occurence of the self modulation peaks can be understood as a self mode locking behavior between the laser cavity mode and the mode in the external feedback section, which is reported in \cite{tager1994high}. In this case, this term is used to name the region where the self-modulation and undamped RO behavior occurs, as shown in \autoref{fig:OSA_and_SMSR} (b), to seperate with the other lasing conditions along the phase shifting current.
+Compare to the wavelength shifting behavior for laser without feedback in \autoref{fig:OSA_and_SMSR} (a), additional hopping behavior in \autoref{fig:OSA_and_SMSR} (b) appears due to the feedback effect. Using the parameters in \autoref{tab:F_reduction_factor} along with the external cavity formed between the end of the grating and the output waveguide facet with length of $L_{ext}=1473.36 \ \mu m$, mode spacing for laser cavity and external feedback section were calculated as $\Delta\nu_{cavity}=67.04 \ GHz$ and $\Delta\nu_{ext}=56.35 \ GHz$ respectively. As seen from \autoref{fig:spectra_lensed_4621} (a), the laser initially operates with the side mode spacing corresponds to the external feedback section, it is because with the feedback from the output waveguide facet $R_{ext}=0.035$, the laser operates in the relative strong feedback region with $C=1.69$ calculated by \autoref{eq:C}. While shifting the phase current, small side peaks which relates to the behavior of self-modulation \cite{broom1969self, broom1970microwave} start to appear beside the main mode as shown in and \autoref{fig:spectra_lensed_4621} (b).
 
-Using the parameters in \autoref{tab:F_reduction_factor} along with the external cavity formed between the end of the grating and the output waveguide facet with length of $L_{ext}=1473.36 \ \mu m$, mode spacing for laser cavity and external feedback section were calculated as $\Delta\nu_{cavity}=67.04 \ GHz$ and $\Delta\nu_{ext}=56.35 \ GHz$ respectively. As seen from \autoref{fig:spectra_lensed_4621} (a), the laser initially operates with the side mode spaing corresponds to the external feedback section, it is because with the feedback from the output waveguide facet, the laser operates in the relative strong feedback region with $C=1.69$ calculated by \autoref{eq:C}. While shifting the phase current, the self-modulation and undamped RO starts to appear as shown in \autoref{fig:undamped_RO_phase_scan} and \autoref{fig:spectra_lensed_4621} (b).
+Regarding to the cavity mode shifting principle, the occurence of the self modulation peaks can be understood as a self mode locking behavior between the laser cavity mode and the mode in the external feedback section, which is reported in \cite{tager1994high}. In this case, this term is used to name the region where these effects occurs, as shown in \autoref{fig:OSA_and_SMSR} (b), to seperate with the other lasing conditions along the phase shifting current.
 
-Examing the lasing spectrum affected by feedback was done by tuing the lasing wavelength through the current applied on the phase section, the result is shown in \autoref{fig:undamped_RO_measurement}.
+Further understanding of the self-modulation peaks introduced by feedback was done by examing the lasing spectrum while tuing the wavelength through the phase current, the result is shown in \autoref{fig:undamped_RO_measurement}.
 
 \begin{figure}[ht]
     \centering
@@ -370,12 +385,14 @@ Examing the lasing spectrum affected by feedback was done by tuing the lasing wa
     \label{fig:undamped_RO_phase_scan}
 \end{figure}
 
-Besides, the feedback effect also alters the laser output that small side peaks appear beside the main mode. It is due to the feedback introduced undamped relaxation oscillation behavior \cite{lenstra1985coherence, bauer2004nonlinear, soriano2013complex}, where the incoming feedback acts like a perturbation for the laser cavity and introduces the amplitude modulation. It is named as self-modulation \cite{broom1969self, broom1970microwave} or self-pulsation \cite{petermann2012laser} and can be explained that the increase of optical power from the feedback yields an increase of optical gain within the laser so that the roud-trip gain reaches over unity and optical power exponentialy increases. On the other hand, an increased power yields an increasing consumption of carriers until the carrier density is too low to maintain a unity roud trip gain and therefore the optical power collapses. A recovery time is required in order to increase the carrier density again until the next pulse develops. The repetition frequency for these pulses is of the same order as the relaxation resonance frequency \cite{petermann2012laser}.
+Small satellite peaks in \autoref{fig:undamped_RO_phase_scan} first show up with low phase current, then slowly increase their intensity and move towards the main peak, followed by more satellite peaks appearing which leads to the undamped relaxation oscillation \cite{lenstra1985coherence, bauer2004nonlinear, soriano2013complex} behavior where the mode spacing between the satellite peaks correspoinds to the relaxation oscillation frequency \cite{petermann2012laser}.
 
-The undamped relaxation oscillation occurs for the appropriate combinations of feedback phase and strength as shown in \autoref{fig:undamped_RO_phase_scan}. The satellite peaks first show up with low phase current, then slowly increase their intensity and move towards the main peak, followed by more satellite peaks appearing when the corresponding relaxation oscillation frequency is further decreased because of the decreasing mode spacing. 
+The feedback introduced undamped relaxation oscillation behavior \cite{lenstra1985coherence, bauer2004nonlinear, soriano2013complex} can be understood as the incoming feedback acts like a perturbation for the laser cavity and introduces the amplitude modulation which is named as self-modulation \cite{broom1969self, broom1970microwave} or self-pulsation \cite{petermann2012laser}. It can be explained that the increase of optical power from the feedback yields an increase of optical gain within the laser so that the roud-trip gain reaches over one and optical power exponentialy increases. On the other hand, an increased power yields an increasing consumption of carriers until the carrier density is too low to maintain a unity roud trip gain and therefore the optical power collapses. A recovery time is required in order to increase the carrier density again until the next pulse develops. The repetition frequency for these pulses is of the same order as the relaxation resonance frequency \cite{petermann2012laser}.
+
+% The undamped relaxation oscillation occurs for the appropriate combinations of feedback phase and strength as shown in \autoref{fig:undamped_RO_phase_scan}. 
 
 \section{Measurement of feedback effects on linewidth}\label{sec:linewidth_measurement}
-Laser linewidth is measured by self-homodyne method in the characterization. Self-homodyning can be described mathematically as a single-delay autocorrelation, which is shown in \autoref{fig:self-homodyne}, the optical spectrum at $f_0$ autocorrelates with the delayed version of itself to produce a time-fluctuating spectrum, whose detected voltage has a power spectrum centered at zero frequency. For the case of a laser with Lorentzian lineshape, the half-width of the detected spectrum is equal to the linewidth of the laser.
+Feedback influenced laser linewidth is measured and compared with the laser linewidth without feedback condition. Self-homodyne method is used and the principle can be described mathematically as a single-delay autocorrelation, which is shown in \autoref{fig:self-homodyne}, the optical spectrum at $f_0$ autocorrelates with the delayed version of itself to produce a time-fluctuating spectrum, whose detected voltage has a power spectrum centered at zero frequency. For the case of a laser with Lorentzian lineshape, the half-width of the detected spectrum is equal to the linewidth of the laser.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{figures/self-homodyne.png}
@@ -391,12 +408,12 @@ The self-homodyne measurement set-up is shown in \autoref{fig:self-homodyne_setu
     \label{fig:self-homodyne_setup}
 \end{figure}
 
-The results of linewidth measurement are shown in \autoref{fig:LB_Cleaved_and_Lensed}. The laser linwidth under feedback shows a more stable transition and become narrower than the case without feedback. It is due to the reason that the external refelctor formed by the polymer/air interface with $R_ext=0.035$ leads to $C=1.69$, it is considered to be in the relative strong feedback region. In such case, the practical formula for linewidth reduction factor $F^2$ \autoref{eq:F_strong_feedback} has to be considered. The comparison for the lowerest linewidth for two configurations, along with the theoretical predcition, is shown in \autoref{tab:linewidth_comparision}.
+The results of linewidth measurement are shown in \autoref{fig:LB_Cleaved_and_Lensed}. The laser linwidth under feedback shows a more stable transition and become narrower than the case without feedback. It is due to the reason that the external refelctor formed by the polymer/air interface with $R_ext=0.035$ leads to $C=1.69$, it is considered to be in the relative strong feedback region. In such case, the practical formula for linewidth reduction factor $F^2$ \autoref{eq:F_strong_feedback} has to be considered. The comparison for the lowerest linewidth for two configurations, along with the theoretical predcition, is shown in \autoref{tab:linewidth_comparison}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/LB_Cleaved_and_Lensed.png}
-    \caption{(a) The laser linewidth without feedback from the chip facet, the light grey points indicate the bad working points, (b) laser linewidth with feedback from the chip facet, it appears to be more stable compare to the laser without feedback. The achieved lowest linewidth point are pointed with black arrow in each case.}
+    \caption{(a) The laser linewidth without feedback from the output waveguide facet (b) laser linewidth with feedback from the output waveguide facet, it appears to be more stable compare to the laser without feedback. The achieved lowest linewidth point are pointed with black arrow in each case.}
     \label{fig:LB_Cleaved_and_Lensed}
 \end{figure}
 
@@ -408,13 +425,13 @@ The results of linewidth measurement are shown in \autoref{fig:LB_Cleaved_and_Le
 %                                              & Cleaved with oil & Lensed          & Reduction & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Reduction\\ (Predicated)\end{tabular}} \\ \midrule
 %     \multicolumn{1}{c}{$\Delta \nu \ (MHz)$} & 0.522 @ Index 52 & 0.317 @ Index 4 & 1.647     & 1.11                                                                                 \\ \bottomrule
 %     \end{tabular}
-%     \label{tab:linewidth_comparision}
+%     \label{tab:linewidth_comparison}
 % \end{table}
 
-\begin{table}[]
+\begin{table}[ht]
     \centering
     \caption{Comparison between the linewidth reduction value achieved by laser w/ and w/o feedback and the predicated reduction value.}
-    \label{tab:linewidth_comparision}
+    \label{tab:linewidth_comparison}
     \begin{tabular}{@{}lllll@{}}
     \toprule
     \multirow{2}{*}{} & \multirow{2}{*}{w/o feedback} & \multirow{2}{*}{w/ feedback} & \multicolumn{2}{c}{Linewdith reduction factor $F^2$} \\
@@ -461,11 +478,30 @@ The difference between the measured and predicated value may comes from the assu
 %     \label{fig:RIN_cleaved_and_lensed}
 % \end{figure}
 
-\section{Bandwidth Measurement}\label{sec:bandwidth_measurement}
-Measurement of the bandwidth by small signal modulation is presented as well as the bandwidth enhancement by detuned loading condition, photon-photon resonance is not observed in this case because the feedback is not strong enough to form counpound cavity modes.
+\section{Measurement of Feedback Effects on Bandwidth}\label{sec:bandwidth_measurement}
+Bandwidth for laser with feedback is compared with the case without feedback by the measurement of small signal modulation. Detuned loading condition achieved in both cases are presented. Photon-photon resonance is not observed because the feedback is not strong enough to form counpound cavity modes.
 
-% \subsection{Small Signal Modulation}
+The frequency response of a laser transmitter under small signal modulation is found by the usual assumption of a harmonic current modulation superimposed on a constant bias above threshold \cite{tucker1985high}. The modulation bandwidth $f_{3dB}$ is a measure of the maximum modulation ability in semiconductor lasers through the injection current. It is usually defined as the frequency at which the modulation response has dropped by $3 \ dB$ relative to its zero freqeuncy value \cite{ohtsubo2012semiconductor, agrawal2013semiconductor}. The characteristics of the small signal modulation in a normal laser are mainly determined by the relaxation oscillation frequency $f_r$, which indicated by the position of the peak in the modulation response. 
 
+The comparison of bandwidth for the polymer-based tunbale laser was characterized at different gain current value. It was done by scanning through the gain current from $40 \ mA$ to $100 \ mA$ with a step of $5 \ mA$ and is presented in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed}. 
+
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{figures/bandwidth_gain_scan_cleaved_4679.png}
+%     \caption{Bandwidth measurements of a normal tunable DBR laser without feedback. The $f_{3dB}$ show a normal behavior that first increase with the applied gain current and then decrease}
+%     \label{fig:bandwidth_gain_scan_cleaved_4679}
+% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/bandwidth_gain_scan_cleaved_and_lensed_grating_4679.png}
+    \caption{Bandwidth measurements of a polymer-based tunable DBR laser. (a) Without feedback, the $f_{3dB}$ shows a normal behavior that first increase with the applied gain current and then decrease, (b) with feedback, the prominant peaks at $65 \ mA$ and $70 \ mA$ permit the increased $f_{3dB}$ value compare with the laser without feedback.}
+    \label{fig:bandwidth_gain_scan_cleaved_and_lensed}
+\end{figure}
+
+Without feedback, the increase of the relaxation oscillation freqeuncy $f_r$ along with rising of the gain current is observed and the intensity drop is due to the higher damping facor achieved at the higher gain current \cite{petermann2012laser}. The maximum bandwidth achieved is $8.2 \ GHz$ at $65 \ mA$ and $70\ mA$.
+
+Compare to \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (a), polymer-based tunable DBR laser operates differently with feedback, the intensity of the relaxation oscillation peak got enhanced especially at gain current $I_{gain}$ between $65 \ mA$ and $80 \ mA$, among these cases the maximum achieved bandwidth is $12.5 \ GHz$ at $70 \ mA$. The reason will be further discussed in \autoref{subsec:feedback_introduced_detuned_loading}.
 
 
 % From a practical viewpoint the quantity of interest is the modulation bandwidth $\nu_B$ which indicates the frequency range over which the laser responds to the current modulation. It is usually defined as the frequency at which the modulation response has dropped by 3 dB relative to its low-frequency or DC value \cite{agrawal2013semiconductor}.
@@ -484,56 +520,37 @@ Measurement of the bandwidth by small signal modulation is presented as well as 
 
 % The relaxation oscillation frequency is a measure of the maximum modulation ability in semiconductor lasers through the injection current. Above the relaxation oscillation, the modulation efficiency is greatly degraded and intensity modulation through the injection current becomes difficult. [Semiconductor Lasers. Stability, Instability and Chaos.pdf]
 
-
-% \textit{steady-state operation (phase alignment of the cavity field and reflected field)}
-
-% \textit{In steady-state operation, the laser with reflective feedback can be thought of as phase locked to the reflected field. The phenomenon that we describe is driven by large fluctuations in spontaneous emission that dislodge the laser from this locked state that is stable for small fluctuations. [Henry, Kazarinov 1986]}
-
 \subsection{Detuend loading condition}\label{subsec:detuned_laoding_measurement}
-The frequency response of a laser transmitter under small signal modulation is found by the usual assumption of a harmonic current modulation superimposed on a constant bias above threshold \cite{tucker1985high}. The modulation bandwidth $f_{3dB}$ is a measure of the maximum modulation ability in semiconductor lasers through the injection current. It is usually defined as the frequency at which the modulation response has dropped by $3 \ dB$ relative to its zero freqeuncy value \cite{ohtsubo2012semiconductor, agrawal2013semiconductor}. The characteristics of the small signal modulation in a normal laser are mainly determined by the relaxation oscillation frequency $f_r$, which indicated by the position of the peak in the modulation response. 
-
-Scanning through the gain current from $40 \ mA$ to $100 \ mA$ with a step of $5 \ mA$, the bandwidth characterization for laser without feedback is presented in \autoref{fig:bandwidth_gain_scan_cleaved_4679}. Without feedabck, the increase of the relaxation oscillation freqeuncy $f_r$ along with rising of the gain current is observed and the intensity drop is due to the higher damping facor achieved at the higher gain current. The maximum bandwidth achieved is $8.2 \ GHz$ at $65 \ mA$ and $70\ mA$.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/bandwidth_gain_scan_cleaved_4679.png}
-    \caption{Bandwidth measurements of a normal tunable DBR laser without feedabck. The $f_{3dB}$ show a normal behavior that first increase with the applied gain current and then decrease}
-    \label{fig:bandwidth_gain_scan_cleaved_4679}
-\end{figure}
-
 In order to find the maximum achievable bandwidth for DBR laser without feedback, operating the tunable DBR laser under the detuned loading condition was measured and the result is shown in \autoref{fig:detuned_loading_measurement}. The measurement was performed by stabilizing the device at \SI{25}{\celsius} and using a gain current $I_{gain}=75 \ mA$. 
 
 % which means the enhancement in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (b) is achieved not purely by detuned loading conditon without feedback effects.
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/detuned_loading.png}
     \caption{(a) Bandwidth enhancement with the detuned loading condition on DBR tunable laser. The red curve is detuned to the longer wavelength side of the grating response and it shows an increased bandwidth of 2.1 GHz compared to the grey curve without bandwidth enhancement effect, (b) spectrum when laser operates at longer wavelength side, (c) spectrum when laser operates at lower wavelength side.}
     \label{fig:detuned_loading_measurement}
 \end{figure}
 
-When the laser is lasing on the slope of the grating response, the side modes have a different gain spectrum relative to the peak of the grating response, which introduces the asymmetric behavior of the side modes as shown in \autoref{fig:detuned_loading_measurement} (b) and (c). In this case, when the left side mode is higher than the right one, means the lasing mode is operating at the longer wavelength side of the grating response, and vice versa. By increasing the phase current $I_{phase}$ from $14 \ mA$ to $20 \ mA$, the lasing mode is detuned from the longer wavelength side of the grating response to the shorter wavelength side. The maximum $f_{3dB}$ achieved at the longer wavelength side (red curve) is $10.6 \ GHz$ and the minimum (grey curve) is $8.5 \ GHz$. These two operating points also correspoinds to the red and grey points in \autoref{fig:PP_resonance_operation_principle}. By exploiting the detuned loading effect with the gain current scanning from \autoref{fig:bandwidth_gain_scan_cleaved_4679}, the maximum achievable bandwidth is $8.5 \ GHz$ for laser without feedback.
+When the laser is lasing on the slope of the grating response, the side modes have a different gain spectrum relative to the peak of the grating response, which introduces the asymmetric behavior of the side modes as shown in \autoref{fig:detuned_loading_measurement} (b) and (c). In this case, when the left side mode is higher than the right one, means the lasing mode is operating at the longer wavelength side of the grating response, and vice versa. By increasing the phase current $I_{phase}$ from $14 \ mA$ to $20 \ mA$, the lasing mode is detuned from the longer wavelength side of the grating response to the shorter wavelength side. The maximum $f_{3dB}$ achieved at the longer wavelength side (red curve) is $10.6 \ GHz$ and the minimum (grey curve) is $8.5 \ GHz$. These two operating points also correspoinds to the red and grey points in \autoref{fig:PP_resonance_operation_principle}.
 
 \subsection{Feedback Introduced Detuned Loading}\label{subsec:feedback_introduced_detuned_loading_measurement}
-The feedback from the chip facet behaves as a perturbation for the normal tunable DBR laser which leads to self-modulation and undamped RO with different phase conditions as shown in \autoref{fig:undamped_RO_phase_scan}. Measurements for DBR laser with feedback were performed with the same setting as in \autoref{subsec:detuned_laoding_measurement} and \autoref{fig:bandwidth_gain_scan_cleaved_4679}, the result is shown in \autoref{fig:bandwidth_gain_scan_lensed_4679}.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/bandwidth_gain_scan_lensed_4679.png}
-    \caption{Bandwidth measurements of a normal tunable DBR laser with feedback, the prominant peaks at $65 \ mA$ and $70 \ mA$ are due to the self-modulation peaks, with the increased $f_{3dB}$ compare with the laser without feedback.}
-    \label{fig:bandwidth_gain_scan_lensed_4679}
-\end{figure}
-
-Compare to \autoref{fig:bandwidth_gain_scan_cleaved_4679}, DBR laser operates differently with feedback, the intensity of the relaxation oscillation peak got enhanced especially at gain value $I_{gain}$ between $65 \ mA$ and $80 \ mA$, among these cases the maximum achieved bandwidth is $12.5 \ GHz$ at $70 \ mA$. 
-
-The reason for the enhancement of the bandwidth can be seen from \autoref{fig:undamped_RO_measurement}. The appearing of the self-modulation side peaks leads to the carrier-photon resonance appears at a higher relaxation oscillation frequency which permits a higher $f_{3dB}$ value of $14.6 \ GHz$. As the side peaks slowly move towards the main peak with increasing intensity, the carrier-photon resonance become stronger with a slightly decreased relaxation oscillating frequency which leads to a $f_{3dB}$ value of $14.0 \ GHz$. As more side peaks appear in \autoref{fig:undamped_RO_measurement} (e), the undamped RO behavior is very strong which lead to a broder lineshape and the intensity modulation shows prominent peaks with frequency corresponding to the mode spacing of the side peaks. This last behavior in \autoref{fig:undamped_RO_measurement} (e) leads to broadened lineshape and significantly decreases the $f_{3dB}$ compare to the other two cases. The increase of the relaxation oscillation intensity and the enhancement of bandwidth shown in \autoref{fig:bandwidth_gain_scan_lensed_4679} is certainly related to the occurence of the side peaks as shown in \autoref{fig:undamped_RO_measurement} (a)-(d). The maximum achieved bandwidth $f_{3dB}$ is $14.6 \ GHz$ for DBR laser with feedback.
+As discussed in \autoref{sec:linewidth_measurement}, the feedback from the output waveguide facet acts like a perturbation for the polymer-based tunable DBR laser which leads to self-modulation and undamped RO while shifting the phase. Combining this spectral behavior with the dutuned loading condition under feedback, further investigation was done using the same setting as in \autoref{subsec:detuned_laoding_measurement}, the result is shown in \autoref{fig:undamped_RO_measurement}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/Undamped_RO_and_bandwidth_grating_4621.png}
-    \caption{Laser spectra and their corresponding intensity modulation curve. (a) Appearing of the undamped RO peak leads to a higher carrier-photon resonance in (b), (c) growing of the side peaks leads to increase of the carrier-photon resonance peak in (d), (e) drastic undamped RO leads to broadened lineshape and decreased modualiton bandwidth in (f).}
+    \caption{Laser spectra and their corresponding intensity modulation curve. (a) Appearing of the undamped RO peak leads to a higher carrier-photon resonance in (b). (c) Growing of the side peaks leads to increase of the carrier-photon resonance peak in (d). (e) Drastic undamped RO leads to broadened lineshape and decreased modualiton bandwidth in (f).}
     \label{fig:undamped_RO_measurement}
 \end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{figures/bandwidth_gain_scan_lensed_4679.png}
+%     \caption{Bandwidth measurements of a normal tunable DBR laser with feedback, the prominant peaks at $65 \ mA$ and $70 \ mA$ are due to the self-modulation peaks, with the increased $f_{3dB}$ compare with the laser without feedback.}
+%     \label{fig:bandwidth_gain_scan_lensed_4679}
+% \end{figure}
+
+The reason for the enhancement of the bandwidth can be seen from \autoref{fig:undamped_RO_measurement}. The appearing of the self-modulation side peaks leads to the carrier-photon resonance appears at a higher relaxation oscillation frequency which permits a higher $f_{3dB}$ value of $14.6 \ GHz$. Because of the phase tuning effect which relates to the dutuned loading condition, the side peaks slowly move towards the main peak with increasing intensity and the carrier-photon resonance become stronger with a slightly decreased relaxation oscillating frequency which leads to a $f_{3dB}$ value of $14.0 \ GHz$. As more side peaks appear in \autoref{fig:undamped_RO_measurement} (e), the undamped RO behavior is very strong which lead to a broader lineshape and the intensity modulation shows prominent peaks with frequency corresponding to the mode spacing of the lasing side peaks. This last behavior in \autoref{fig:undamped_RO_measurement} (e) leads to broadened lineshape and significantly decreases the $f_{3dB}$ compare to the other two cases. The increase of the relaxation oscillation intensity and the enhancement of bandwidth shown in \autoref{fig:bandwidth_gain_scan_cleaved_and_lensed} (b) is certainly related to the occurence of the side peaks as shown in \autoref{fig:undamped_RO_measurement} (a)-(d). The maximum achieved bandwidth $f_{3dB}$ is $14.6 \ GHz$ for polymer-based tunable DBR laser with feedback. Photon-photon resonance was not observed in this case.
 
 % \subsection{}
 % \textit{Chirp arises because the frequency of the laser mode depends on the carrier number in the active region. Above threshold, the carrier number changes because of two effects: spectral hole burning prohibits the perfect pinning of the carrier number and permits adiabatic chirp, and during transients, there are relaxation oscillations of carrier number, which cause dynamic chirp. [Kazarinov 1987]}
@@ -544,14 +561,8 @@ The reason for the enhancement of the bandwidth can be seen from \autoref{fig:un
 
 
 
-\section{Chirp Parameter Measurement}\label{sec:chirp_measurement}
-Light chirping can be defined as the instantaneous change of the central wavelength or optical frequency in response to variations in the optical power \cite{villafranca2007precise}. Two main contributions of the frequency chirp are distinguished, one is a transient chirp component that evolve with the time deriative of the optical power, and is scaled by $\alpha$, normally called linewidth enhancement factor when dealing with lasers. Another one is an adiabatic chirp, producing a frequency shift proportional to the instantaneous optical power, and scaled, in addition to $\alpha$, by parameter $\kappa$, which is associated to the nonlinear gain \cite{villafranca2007precise, harder1983measurement}. Here only the transient chirp is considered. Since the linewidth enhancement factor $\alpha$ is highly phase dependent, two measurement methods are performed to get the right characterization for DBR laser with feedback.
-
-% i.e. a residual frequency modulation of an amplitude modulated optical wave
-% the $\alpha$ parameter is defined as 
-% \begin{equation}
-%     \alpha=-\frac{\dv*{\chi_r(n)}{n}}{\dv*{\chi_i(n)}{n}}
-% \end{equation}
+\section{Chirp Parameter ($\alpha$-factor) Measurement}\label{sec:chirp_measurement}
+Since the linewidth enhancement factor $\alpha$ is highly dependent on the spectral detuning \cite{soriano2013complex}, two measurement methods are performed to get the right characterization for DBR laser with feedback.
 
 \subsection{Measurement with Lightwave Component Analyzer}\label{subsec:measurement_with_LCA}
 First method by using the Lightwave Component Analyzer (LCA) of \autoref{fig:LCA_setup} measures the small signal frequency response of a light emitter, a dispersive medium and a light receiver. The dispersive medium is a standard single mode fiber of $81 \ km$ and an Er-doped fiber amplifier pumped at 1.55 $\mu m$. Resonance frequencies are observed as sharp peaks in the frequency response.
@@ -585,13 +596,13 @@ The frequency response form LCA and fitted linear regression data are shown in \
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/chirp_cleaved_and_lensed_4679.png}
-    \caption{Frequency response from the LCA measurement, (a) without feedabck, (c) with feedabck. Resonance frequencies squared (x-axis of (a) and (c)) times fiber length ($81 \ km$) versus two times the order of the resonance, (b) without feedback, (d) with feedback. Linear regression allows to find the chirp parameter and the dispersion from \autoref{eq:LCA_equation}.}
+    \caption{Frequency response from the LCA measurement, (a) without feedback, (c) with feedback. Resonance frequencies squared (x-axis of (a) and (c)) times fiber length ($81 \ km$) versus two times the order of the resonance, (b) without feedback, (d) with feedback. Linear regression allows to find the chirp parameter and the dispersion from \autoref{eq:LCA_equation}.}
     \label{fig:chirp_cleaved_and_lensed}
 \end{figure}
 
 \begin{table}[ht]
     \centering
-    \caption{Comparision of achieved $\alpha$ parameter value. Laser with feedback in general shows a decreased $\alpha$ value at all current values except for $80 \ mA$. The different calculated $F$ factor may come from shifting of the phase by increasing the current value.}
+    \caption{Comparison of achieved $\alpha$ parameter value. Laser with feedback in general shows a decreased $\alpha$ value at all current values except for $80 \ mA$. The different calculated $F$ factor may come from shifting of the phase by increasing the current value.}
     \label{tab:chirp_alpha_comparison}
     \begin{tabular}{@{}llll@{}}
     \toprule
@@ -608,7 +619,7 @@ The frequency response form LCA and fitted linear regression data are shown in \
 \end{table}
 
 \subsection{AM-FM Index Method}
-Transient chirp parameter $\alpha$ can also be obtained from measurements of the optical intensity spectrum. For this measurement technique, the ratio of residual phase modulation to amplitude modulation is measured from the optical spectrum of the laser when it is modulated with a sinusoidal signal of frequency $f$, the output optical intensity is assumed same as \autoref{eq:chirp_optical_intensity}. The optical intensiy spectrum of this signal is characterized by and optical carrier with power $I_0$, and two first oder sidebans with average power given by \cite{harder1983measurement}
+The $\alpha$ parameter can also be obtained from measurements of the optical intensity spectrum. For this measurement technique, the ratio of residual phase modulation to amplitude modulation is measured from the optical spectrum of the laser when it is modulated with a sinusoidal signal of frequency $f$, the output optical intensity is assumed same as \autoref{eq:chirp_optical_intensity}. The optical intensiy spectrum of this signal is characterized by and optical carrier with power $I_0$, and two first oder sidebans with average power given by \cite{harder1983measurement}
 \begin{equation}
     \overline{I_{\pm 1}}=I_0\qty(\frac{m}{4})^2\qty(1+\qty(\frac{2p}{m})^2) \qquad with \ m \ll 1
 \end{equation}
@@ -642,7 +653,7 @@ The $\alpha$ parameter measurement results are shown in \autoref{fig:Alpha_Cleav
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/Alpha_Cleaved_and_Lensed.png}
-    \caption{(a) Measurement with cleaved fiber with oil, the light grey squares are corresponding to the unstable points mentioned before, (b) measurement with lensed fiber, lower $\alpha$ parameter value is achieved.}
+    \caption{(a) Measurement with cleaved fiber with oil, (b) measurement with lensed fiber, lower $\alpha$ parameter value is achieved.}
     \label{fig:Alpha_Cleaved_and_Lensed}
 \end{figure}
 
