@@ -28,7 +28,7 @@ The on-chip short feedback cavity design is shown in \autoref{fig:grating_6559},
     \centering
     \includegraphics[width=\linewidth]{figures/6559_short_comment.png}
     \caption{Chip design of the laser with a short external section and controllable feedback.}
-    \label{fig:grating_6559}
+    \label{fig:grating_6559_design}
 \end{figure}
 
 In order to exploit PPR, \autoref{eq:mode_spacing_FSR} is used to set the ideal cavity length in combine with \autoref{tab:PPR_FSR} as shown below. External cavity length of [3129.76, 3589,76, 3859.76, 4159.76, 4869.76, 5309.76, 6359.76] $\mu m$ are choosen according to the calculated FSR plot shown in \autoref{fig:design_FSR}.
@@ -91,12 +91,12 @@ The best achieved bandwidth value of $f_{3dB}=13.2 \ GHz$ with PPR is shown in \
     \label{fig:spectra_and_bandwidth_6557}
 \end{figure}
 
-Chirp reduction is also observed by tuning the phase in the external feedback section, the result is shown in \autoref{fig:chirp_6559} and \autoref{tab:chirp_6559}. Tuning the phase current from $10 \ mA$ to $14 \ mA$ allows the increase of the $\alpha$ parameter from $1.793$ to $3.245$. Note that the current value in \autoref{tab:chirp_6559} is $1 \ mA$ higher than the value in \autoref{fig:chirp_6559} because of the existance of the hysteresis.
+Chirp reduction is also observed by tuning the phase in the external feedback section, the result is shown in \autoref{fig:chirp_6559} and \autoref{tab:chirp_6559}. Tuning the phase current from $10 \ mA$ to $14 \ mA$ allows the increase of the $\alpha$ parameter from $1.793$ to $3.245$. Note that the current value in \autoref{tab:chirp_6559} is $1 \ mA$ higher than the value in \autoref{fig:spectra_and_bandwidth_6559} because of the existance of the hysteresis.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.7\linewidth]{figures/chirp_6559.png}
-    \caption{LInear regression fit for phase current from $10 \ mA$ to $14 \ mA$.}
+    \caption{Linear regression fit for phase current from $10 \ mA$ to $14 \ mA$.}
     \label{fig:chirp_6559}
 \end{figure}
 
@@ -121,13 +121,13 @@ Chirp reduction is also observed by tuning the phase in the external feedback se
 The reason for the change of the $\alpha$ with respect to change of the phase current may relates to the slope of the feedback altered grating response as discussed in \autoref{subsec:feedback_introduced_detuned_loading}. By changing the phase current it shifts the lasing mode along the RTG curve towards the central peak which decreases the slope and in turn decreases the $B$ parameter.
 
 \subsection{Long Feedback Cavity} \label{subsec:long_feedback_cavity}
-Follows the same design principle as in \autoref{subsec:short_feedback_cavity}, the long feedback section is achieved by the spiral structure with the circle bending radius of $1500 \ \mu m$. The on-chip long feedback design is shown in \autoref{fig:grating_5742}. The spiral structure has a variable design to achieve external cavity length of [39.28, 55.70, 81.33, 86.53, 100.75, 157.35] $\ mm$ by using \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback}.
+Follows the same design principle as in \autoref{subsec:short_feedback_cavity}, the long feedback section is achieved by the spiral structure with the circle bending radius of $1500 \ \mu m$. The on-chip long feedback design is shown in \autoref{fig:grating_5742_design}. The spiral structure has a variable design to achieve external cavity length of [39.28, 55.70, 81.33, 86.53, 100.75, 157.35] $\ mm$ by using \autoref{eq:F_weak_feedback} and \autoref{eq:F_strong_feedback}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/5742_spiral_comment.png}
     \caption{Chip design of the laser with a long external section and controllable feedback.}
-    \label{fig:grating_5742}
+    \label{fig:grating_5742_design}
 \end{figure}
 
 The example of produced photonic integrated circuits (PICs) and grating characterization is shown in \autoref{fig:grating_5742}. Similliar ripples were observed in the reflection curves but not in the transmission curves, it may because the attenuation inside the polymer waveguide after the spiral structure is relative high so that the reflected from the TFF slot got attenuated.
